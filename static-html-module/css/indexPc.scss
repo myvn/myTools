@@ -1,0 +1,9 @@
+// 比率
+$size: 1080/100vw;
+@function gvw($px) {
+  @return $px / $size
+}
+
+.test {
+  height: gvw(100);
+}
