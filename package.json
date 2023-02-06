@@ -1,5 +1,5 @@
 {
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "my-tools-ts",
   "name": "my-tools-ts",
   "main": "./dist/main.js",
@@ -15,9 +15,9 @@
     "serve": "webpack serve"
   },
   "keywords": [
-    "kits",
     "randomAny",
-    "minioUtils"
+    "StorageData",
+    "JsSm4Client"
   ],
   "author": "ahrimansource",
   "devDependencies": {
