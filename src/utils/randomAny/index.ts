@@ -1,16 +1,40 @@
 // 随机集合设置
 const randomMapOption = {
     // 数字
-    numbers: '1234567890',
+    num: '1234567890',
     // 字母
-    letters: 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz',
+    az: 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz',
     // 英文符号
-    specials: '<~!@#$%^*()_+-=[]{}|;:,./?>',
+    fh: '<~!@#$%^*()_+-=[]{}|;:,./?>',
     // // 拉丁字母
     // latins: 'αβγδεζηθικλμνξοπρστυφχψω',
     // // 数学符号
     // maths: '㏒㏑∑√∫∞½¾¼‰≧≦≮≯≡≈≠÷±∮'
 }
+
+interface randomOption {
+    // 数字
+    num?: boolean;
+    // 字母
+    az?: boolean;
+    // 符号
+    fh?: boolean;
+}
+
+/**
+ * 拼接字符串
+ * @param option
+ */
+const spliceChars = (option: randomOption) => {
+    let chars = ''
+    for (let optionsKey in option) {
+        if (option[optionsKey]) {
+            chars += randomMapOption[optionsKey]
+        }
+    }
+    return chars
+}
+
 
 /**
  * 随机字符
@@ -19,40 +43,31 @@ const randomMapOption = {
  * @return {string}
  */
 
-const randomAny = (length = 4, options = {}) => {
-    let chars = '';
-    let resultString = '';
-    if (options === true || options === false || options === '' || JSON.stringify(options) === '{}') {
-        // 所有类型的字符
-        for (let defaultOptionKey in randomMapOption) {
-            chars += randomMapOption[defaultOptionKey]
+export function randomAny(length?: number, options?: randomOption | string) {
+    let resultString = ''
+    let chars = ''
+    // 默认4 最大1000
+    length = length ? (length > 1000 ? 1000 : Math.abs(length)) : 4
+
+    if (options) { // this.options 存在
+        if (typeof options === "object") { // object 类型
+            chars = spliceChars(options)
+        } else if (typeof options === "string") { // string 类型
+            // 自定义随机
+            chars = options
         }
-    } else if (typeof options == 'string') {
-        // 限制为当前传入的字符
-        chars = options;
-    } else {
-        // 按需返回
-        for (let optionsKey in randomMapOption) {
-            if (typeof (options[optionsKey]) === 'boolean' && options[optionsKey] !== false) {
-                chars += randomMapOption[optionsKey]
-            } else if (typeof (options[optionsKey]) === 'undefined') {
-                chars += randomMapOption[optionsKey]
-            } else if (typeof (options[optionsKey]) === 'string') {
-                if (options[optionsKey] !== '') {
-                    chars += options[optionsKey]
-                } else if (options[optionsKey] === '') {
-                    chars += randomMapOption[optionsKey]
-                }
-            }
-        }
+    } else { // this.options 不存在
+        options = {num: true, az: true, fh: true}
+        chars = spliceChars(options)
     }
+
+    // 开始随机拼接
     while (length > 0) {
         length--;
         resultString += chars[Math.floor(Math.random() * chars.length)];
     }
-    return resultString;
+    // 返回结果
+    return resultString
 }
-export {
-    randomAny,
-    randomMapOption
-}
+
+

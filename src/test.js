@@ -1,2 +1,2 @@
-let localStorage,local,l='localStorage'
-let sessionStorage,session,s="sessionStorage"
+let {JsSm4Client} = require('../dist/main')
+

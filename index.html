@@ -11,23 +11,52 @@
 </body>
 
 <script>
+
+    let {StorageData, JsSm4Client, randomAny} = kits
     console.log(kits);
 
-    let options = {
-        // 加密相关参数
-        encryptOption: {publicKey: 'AnyString'},
-        // 环境相关参数
-        // storageObj.l 表示使用 localStorage 对象存储,
-        // storageObj.s 表示使用 sesionStorage 对象存储,
-        option: {envName: 'dev', storageObj: 'l'}
+    // 随机字符测试
+    function test_randomAny() {
+        console.log(randomAny(5));
+        console.log(randomAny(5, {num: true, az: true, fh: true}));
+        console.log(randomAny(5, "sdfsdfsfsfs"));
+        console.log(randomAny(8, {az: true}));
     }
-    let {encryptOption,option}=options
 
-    let storageX = new kits.StorageData({encryptOption},{option})
+    //  数据存储测试
+    function test_StorageData() {
+        let option = {
+            publicKey: 'AnyString',
+            envName: 'dev',
+            // s 表示使用 sesionStorage 对象存储,
+            // l 表示使用 localStorage 对象存储,
+            storageObj: 'l',
+            privateKey: 'AnyString',
+        }
 
-    storageX.setData('test', 'ssss 12343234')
-    console.log(storageX.getData('test'));
+        let storage = new StorageData({publicKey: 'AnyString'})
 
+        storage.setData('tes12t', 'ssssdfdsfs 12343234')
+
+        storage.getData('test')
+    }
+
+    // 国密4测试
+    function test_jsSm4() {
+        const key = '1234321'
+        let jsSm4Client = new JsSm4Client(key)
+        let a = "1232123"
+        console.log(jsSm4Client.decryptData(jsSm4Client.encryptData(a))); // 1232123
+    }
+
+    //  数据存储测试
+    test_StorageData()
+
+    // 国密4测试
+    test_jsSm4()
+
+    // 随机字符测试
+    test_randomAny()
 
 </script>
 </html>
