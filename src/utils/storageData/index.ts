@@ -50,10 +50,12 @@ export default class StorageData {
             if (typeof data === 'object') {
                 data = JSON.stringify(data)
             }
-            this.storageObj.setItem(this.isDev ? key : `dev_${key}`, this.isDev ? data : this.dataEncrypt(data))
+            this.storageObj.setItem(this.isDev ? `dev_${key}` : key, this.isDev ? data : this.dataEncrypt(data))
+
         } catch (error) {
-            console.error(error)
+            this.storageObj.setItem(this.isDev ? `dev_${key}` : key, this.isDev ? data : this.dataEncrypt(data))
         }
+
     }
 
     /**
@@ -62,12 +64,13 @@ export default class StorageData {
      */
     getData = (key) => {
         let result = ''
+        let value = this.isDev ? this.storageObj.getItem(`dev_${key}`) : this.dataDecrypt(this.storageObj.getItem(key))
         try {
-            let value = this.isDev ? this.storageObj.getItem(key) : this.dataDecrypt(this.storageObj.getItem(`dev_${key}`))
             result = JSON.parse(value)
-        } catch (error) {
-            result = localStorage.getItem(key)
+        } catch (e) {
+            result = value
         }
+
         return result
     }
 

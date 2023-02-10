@@ -34,11 +34,9 @@
             privateKey: 'AnyString',
         }
 
-        let storage = new StorageData({publicKey: 'AnyString'})
-
+        let storage = new StorageData(option)
         storage.setData('tes12t', 'ssssdfdsfs 12343234')
-
-        storage.getData('test')
+        console.log(storage.getData('tes12t'));
     }
 
     // 国密4测试
@@ -53,10 +51,10 @@
     test_StorageData()
 
     // 国密4测试
-    test_jsSm4()
+    // test_jsSm4()
 
     // 随机字符测试
-    test_randomAny()
+    // test_randomAny()
 
 </script>
 </html>

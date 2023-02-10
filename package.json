@@ -1,5 +1,5 @@
 {
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "my-tools-ts",
   "name": "my-tools-ts",
   "main": "./dist/main.js",
