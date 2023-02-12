@@ -6,14 +6,23 @@
     <script src="./dist/main.js"></script>
 </head>
 <body>
+<div id="app">
+    <div style="background: red;width: 20vw;height: 20vw">
+        测试自动一键置灰
+    </div>
+</div>
 <h1>Hello world!</h1>
 <h2>Tip: Check your console</h2>
 </body>
 
 <script>
 
-    let {StorageData, JsSm4Client, randomAny} = kits
+    let {StorageData, JsSm4Client, randomAny, setGrayscale} = kits
     console.log(kits);
+    // 置灰测试
+    function test_setGrayscale() {
+        setGrayscale(100)
+    }
 
     // 随机字符测试
     function test_randomAny() {
@@ -35,7 +44,8 @@
         }
 
         let storage = new StorageData(option)
-        storage.setData('tes12t', 'ssssdfdsfs 12343234')
+        storage.setData('testString', 'ssssdfdsfs 12343234')
+        storage.setData('testObject', 'ssssdfdsfs 12343234')
         console.log(storage.getData('tes12t'));
     }
 

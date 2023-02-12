@@ -1,21 +1,24 @@
-# umd 
+# umd
 
 ```html
- <script src="./dist/main.js"></script>
- <script>
-     // kits  window中有
-     let {StorageData, JsSm4Client, randomAny} = kits
- </script>
+
+<script src="./dist/main.js"></script>
+<script>
+    // kits  window中有
+    let {setGrayscale, StorageData, JsSm4Client, randomAny} = kits
+</script>
 ```
+
 # node安装
 
-
 npm install my-tools-ts
-
 
 ```javascript
 // 默认导出工具 小写开头不用实例化
 export {
+    // dom 置灰
+    setGrayscale,
+
     // 数据存储工具类
     StorageData,
 
@@ -26,6 +29,42 @@ export {
     randomAny
 }
 ```
+
+* ## setGrayscale 置灰
+
+> 通过dom对象设置style属性,来实现置灰
+
+
+
+配置参数描述
+
+```javascript
+// num : 灰度0-100,默认为100 
+// domId :  domId 默认为app
+```
+html
+```html
+<div id="app">
+    <div style="background: red;width: 20vw;height: 20vw">
+        测试自动置灰
+    </div>
+</div>
+<script>
+    setGrayscale(100)
+</script>
+```
+js
+```javascript
+//
+// num : 灰度0-100,默认为100 
+// domId :  domId 默认为app
+
+// 引入
+import {setGrayscale} from 'my-tools-ts'
+//  给id为:testView 的dom对象,灰度设置为80%
+setGrayscale(80,'testView')
+```
+
 
 * ## StorageData : 浏览器本地数据加密存储工具
 
@@ -87,7 +126,7 @@ storage1.getData('test')
 // 引入
 import {randomAny} from 'my-tools-ts'
 //  {num : 控制数字  az  : 控制字母,fh  : 控制符号}
- 
+
 // 随机5位任意字符
 randomAny(5) // *Ql?/
 randomAny(5, {num: true, az: true, fh: true}) // -J-5o
@@ -109,21 +148,19 @@ randomAny(8, {fh: true}) // ]}#-)/><
 * ## JsSm4Client 国密4 加密,解密
 
 > 封装了JsSm4,
- 
+
 
 配置参数描述
- key : 秘钥
- 
- * 加密方法
- * @param plaintext
- * encryptData( plaintext:string): string
+key : 秘钥
+
+* 加密方法
+* @param plaintext
+* encryptData( plaintext:string): string
 
 
- * 解密方法
- * @param ciphertext
- * decryptData(ciphertext:string): string
-
- 
+* 解密方法
+* @param ciphertext
+* decryptData(ciphertext:string): string
 
 ```javascript
 // 引入
