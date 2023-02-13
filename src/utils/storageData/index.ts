@@ -3,13 +3,19 @@ import JsSm4Client from '../../utils/encrypt/JsSm4Client'
 //   { publicKey:"公钥",privateKey:"私钥",envName:"dev",storageObj:"存储类型 localStorage||sessionStorage" }
 interface Option {
     // 公钥
-    publicKey: string,
+    publicKey: string
     // 环境名称
     envName?: string
     // 存储对象
     storageObj?: string
     // 私钥
     privateKey?: string
+}
+
+interface FormatData {
+    type: string | boolean | number | object | undefined;
+    data: string | boolean | number | object;
+
 }
 
 export default class StorageData {
@@ -45,17 +51,12 @@ export default class StorageData {
      * @param key
      * @param data
      */
-    setData = (key, data: string | object) => {
-        try {
-            if (typeof data === 'object') {
-                data = JSON.stringify(data)
-            }
-            this.storageObj.setItem(this.isDev ? `dev_${key}` : key, this.isDev ? data : this.dataEncrypt(data))
-
-        } catch (error) {
-            this.storageObj.setItem(this.isDev ? `dev_${key}` : key, this.isDev ? data : this.dataEncrypt(data))
-        }
-
+    setData = (key, data: string | boolean | number | object) => {
+        data = this.formatData(data)
+        this.storageObj.setItem(
+            this.isDev ? `dev_${key}` : key,
+            this.isDev ? data : this.dataEncrypt(data)
+        )
     }
 
     /**
@@ -63,15 +64,8 @@ export default class StorageData {
      * @param key
      */
     getData = (key) => {
-        let result = ''
-        let value = this.isDev ? this.storageObj.getItem(`dev_${key}`) : this.dataDecrypt(this.storageObj.getItem(key))
-        try {
-            result = JSON.parse(value)
-        } catch (e) {
-            result = value
-        }
-
-        return result
+        let str = this.isDev ? this.storageObj.getItem(`dev_${key}`) : this.dataDecrypt(this.storageObj.getItem(key))
+        return this.translateData(str).data
     }
 
     /**
@@ -123,4 +117,51 @@ export default class StorageData {
             return localStorage
         }
     }
+
+    /**
+     * 格式化数据
+     * @param data
+     * @private
+     */
+    private formatData(data): string {
+        let dataType = typeof data;
+        let dataResult = {};
+        if (dataType === 'object' || dataType === 'boolean' || dataType === 'number') {
+            dataResult = {
+                type: dataType,
+                data: JSON.stringify(data)
+            }
+        } else if (dataType === 'string') {
+            dataResult = {
+                type: dataType,
+                data: data
+            }
+        } else {
+            dataResult = {
+                type: "undefined",
+                data: ''
+            }
+        }
+        return JSON.stringify(dataResult)
+    }
+
+    /**
+     * 将数据还原成原来存储时的样子
+     * @param stringData
+     * @private
+     */
+    private translateData(stringData: string): FormatData {
+        let objData = JSON.parse(stringData)
+        if (objData.type === 'boolean' || objData.type === 'object' || objData.type === 'number') {
+            // 保持原来的数据类型
+            objData.data = JSON.parse(objData.data)
+        } else if (objData.type === 'string') {
+            // 不做任何处理,本来数据就是以字符串形式存储
+        } else {
+            // 其他直接将数据置为""
+            objData.data = ''
+        }
+        return objData
+    }
+
 }

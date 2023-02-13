@@ -88,19 +88,29 @@ let option = {
     // 非必传 默认 AnyString
     privateKey: 'AnyString',
 }
-// 数据加密,存储在浏览器中
-let storage0 = new StorageData(option)
-storage0.setData('test', 'ssss 12343234')
-storage0.getData('test')
 
-// 配置参数简洁
-let option1 = {
+let option = {
     publicKey: 'AnyString',
+    envName: 'dev',
+    // s 表示使用 sesionStorage 对象存储,
+    // l 表示使用 localStorage 对象存储,
+    storageObj: 'l',
+    privateKey: 'AnyString',
 }
-// 数据不加密,存储在浏览器中
-let storage1 = new StorageData(optionAll)
-storage1.setData('test', 'ssss 12343234')
-storage1.getData('test')
+
+let storage = new StorageData(option)
+
+storage.setData('testString', 'ssssdfdsfs 12343234')
+storage.setData('testObject', {name:1})
+storage.setData('testNumber', 111111)
+storage.setData('testBoolean', false)
+storage.setData('testArray', ["1",2,false,{name:1}])
+
+console.log(storage.getData('testString'))
+console.log(storage.getData('testObject'))
+console.log(storage.getData('testNumber'))
+console.log(storage.getData('testBoolean'))
+console.log(storage.getData('testArray'))
 ```
 
 * ## randomAny 随机字符串

@@ -45,8 +45,17 @@
 
         let storage = new StorageData(option)
         storage.setData('testString', 'ssssdfdsfs 12343234')
-        storage.setData('testObject', 'ssssdfdsfs 12343234')
-        console.log(storage.getData('tes12t'));
+        storage.setData('testObject', {name:1})
+        storage.setData('testNumber', 111111)
+        storage.setData('testBoolean', false)
+        storage.setData('testArray', ["1",2,false,{name:1}])
+
+        console.log(storage.getData('testString'))
+        console.log(storage.getData('testObject'))
+        console.log(storage.getData('testNumber'))
+        console.log(storage.getData('testBoolean'))
+        console.log(storage.getData('testArray'))
+
     }
 
     // 国密4测试
