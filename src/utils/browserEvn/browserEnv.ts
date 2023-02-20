@@ -1,5 +1,7 @@
 let browserEnv = {
     isMobile: () => {
+        let ua=''
+        console.log(ua);
     },
     isWx: () => {
 
