@@ -4,16 +4,16 @@ let browserEnv = {
         console.log(ua);
     },
     isWx: () => {
-
+        return ''
     },
     isWxMin: () => {
-
+        return ''
     },
     isAli: () => {
-
+        return ''
     },
     isAliMin: () => {
-
+        return ''
     }
 }
 // 查看我的git Config mark ahrimansource@gmail.com
