@@ -64,8 +64,15 @@ export default class StorageData {
      * @param key
      */
     getData = (key) => {
-        let str = this.isDev ? this.storageObj.getItem(`dev_${key}`) : this.dataDecrypt(this.storageObj.getItem(key))
-        return this.translateData(str).data
+        key = this.isDev ? `dev_${key}` : key
+        let storageString = this.storageObj.getItem(key) || ""
+        if (storageString && storageString !== "") {
+            let str = this.isDev ? storageString: this.dataDecrypt(storageString)
+            return this.translateData(str).data
+        } else {
+            return ''
+        }
+
     }
 
     /**
