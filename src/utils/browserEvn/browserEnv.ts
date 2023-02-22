@@ -9,6 +9,11 @@ let browserEnv = {
         console.log(ua);
     },
     isWx: () => {
+        let arr=[1,2,3,4,5]
+        arr.forEach((item, index) => {
+            console.log(item);
+            console.log(index);
+        })
         return ''
     },
     isWxMin: () => {
