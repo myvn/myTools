@@ -1,15 +1,15 @@
 let browserEnv = {
     isMobile: () => {
-        let arr=[1,2,3,4,5]
+        let arr = [1, 2, 3, 4, 5]
         arr.forEach((item, index) => {
             console.log(item);
             console.log(index);
         })
-        let ua=''
+        let ua = ''
         console.log(ua);
     },
     isWx: () => {
-        let arr=[1,2,3,4,5]
+        let arr = [1, 2, 3, 4, 5]
         arr.forEach((item, index) => {
             console.log(item);
             console.log(index);
@@ -17,7 +17,7 @@ let browserEnv = {
         return ''
     },
     isWxMin: () => {
-        let arr=[1,2,3,4,5]
+        let arr = [1, 2, 3, 4, 5]
         arr.forEach((item, index) => {
             console.log(item);
             console.log(index);
@@ -25,7 +25,7 @@ let browserEnv = {
         return ''
     },
     isAli: () => {
-        let arr=[1,2,3,4,5]
+        let arr = [1, 2, 3, 4, 5]
         arr.forEach((item, index) => {
             console.log(item);
             console.log(index);
@@ -33,14 +33,17 @@ let browserEnv = {
         return ''
     },
     isAliMin: () => {
-        let arr0=[]
-        let arr1=[]
-        let arr=[1,2,3,4,5]
+        let arr0 = []
+        let arr1 = []
+        let arr = [1, 2, 3, 4, 5]
         arr.forEach((item, index) => {
             arr0.push(item)
             arr1.push(item)
             console.log(item);
             console.log(index);
+        })
+        arr.filter((item) => {
+            console.log(item);
         })
         return ''
     }
