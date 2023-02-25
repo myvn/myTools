@@ -55,3 +55,5 @@ let browserEnv = {
 // 查看我的git Config
 
 export default browserEnv
+let a = "1111"
+console.log(typeof a);
