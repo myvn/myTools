@@ -42,6 +42,9 @@ let browserEnv = {
             console.log(item);
             console.log(index);
         })
+        arr.map((item) => {
+            console.log(item);
+        })
         arr.filter((item) => {
             console.log(item);
         })
