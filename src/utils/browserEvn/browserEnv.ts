@@ -33,8 +33,10 @@ let browserEnv = {
         return ''
     },
     isAliMin: () => {
+        let arr0=[]
         let arr=[1,2,3,4,5]
         arr.forEach((item, index) => {
+            arr0.push(item)
             console.log(item);
             console.log(index);
         })
