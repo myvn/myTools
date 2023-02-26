@@ -40,3 +40,4 @@ function aa (v_money, need_dot) {
 
 console.log(aa(11565656565541.7000000000077));
 console.log(aa(11565656565541.7000000000077));
+console.log(aa(11565656565541.7000000000077));
