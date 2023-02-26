@@ -1,4 +1,4 @@
-function aa (v_money, need_dot) {
+function money (v_money, need_dot) {
     try {
         var p_number = parseFloat(v_money);
         if(isNaN(p_number)) {
@@ -37,12 +37,6 @@ function aa (v_money, need_dot) {
         return "";
     }
 };
+let a ='sdf dsf'
+console.log(a.split(' '));
 
-console.log(aa(11565656565541.7000000000077));
-console.log(aa(11565656565541.7000000000077));
-console.log(aa(11565656565541.7000000000077));
-console.log(aa(11565656565541.7000000000077));
-console.log(aa(11565656565541.7000000000077));
-console.log(aa(11565656565541.7000000000077));
-console.log(aa(11565656565541.7000000000077));
-console.log(aa(11565656565541.7000000000077));
