@@ -57,8 +57,4 @@ let browserEnv = {
 export default browserEnv
 let a = "1111"
 console.log(typeof a);
-console.log(typeof a);
-console.log(typeof a);
-console.log(typeof a);
-console.log(typeof a);
-console.log(typeof a);
+
