@@ -37,6 +37,10 @@ function money (v_money, need_dot) {
         return "";
     }
 };
-let a ='sdf dsf'
-console.log(a.split(' '));
+let as=[]
+for (let i = 0; i <100000000 ; i++) {
+    as.push(i)
+}
+console.log(as);
+
 
