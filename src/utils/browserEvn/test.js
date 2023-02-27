@@ -282,3 +282,32 @@ export const throttle = function(func, delay) {
         }
     }
 }
+/**
+ * 防抖
+ * @param {*} fn 执行函数
+ * @param {*} wait 防抖时间,毫秒
+ */
+export const debounce = function(fn, wait) {
+    let timeout = null
+    return function() {
+        if (timeout !== null) clearTimeout(timeout)// 如果多次触发将上次记录延迟清除掉
+        timeout = setTimeout(() => {
+            fn.apply(this, arguments)
+            // 或者直接 fn()
+            timeout = null
+        }, wait)
+    }
+}
+
+/**
+ *  获取 url 后面通过?传参的参数
+ * @param {String} name
+ */
+export function getQueryString(name) {
+    const reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i')
+    const url = window.location.href
+    const search = url.substring(url.lastIndexOf('?') + 1)
+    const r = search.match(reg)
+    if (r != null) return unescape(r[2])
+    return null
+}
