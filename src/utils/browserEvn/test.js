@@ -38,9 +38,72 @@ function money (v_money, need_dot) {
     }
 };
 let as=[]
-for (let i = 0; i <100000000 ; i++) {
-    as.push(i)
+for (let i = 0; i <900000000 ; i++) {
+    as.push(1)
 }
 console.log(as);
 
+// https://blog.51cto.com/ruan365392777/5575198
+/**
+ * 数组并集,只支持一维数组
+ * @param {Array} arrOne
+ * @param {Array} arrTwo
+ */
+export const arrAndSet = (arrOne, arrTwo) => {
+    return arrOne.concat(arrTwo.filter(v => !arrOne.includes(v)))
+}
 
+/**
+ * 数组交集,只支持一维数组
+ * @param {Array} arrOne
+ * @param {Array} arrTwo
+ */
+export const arrIntersection = (arrOne, arrTwo) => {
+    return arrOne.filter(v => arrTwo.includes(v))
+}
+
+/**
+ * 数组差集,只支持一维数组
+ * @param {Array} arrOne
+ * @param {Array} arrTwo
+ * eg: [1, 2, 3] [2, 4, 5] 差集为[1,3,4,5]
+ */
+export const arrDifference = (arrOne, arrTwo) => {
+    return arrOne.concat(arrTwo).filter(v => !arrOne.includes(v) || !arrTwo.includes(v))
+}
+
+
+/**
+ * 两个数组合并成一个对象数组,考虑到复杂度,所以目前支持两个一维数组
+ * @param {Array} arrOne
+ * @param {Array} arrTwo
+ * @param {oneKey} oneKey 选填,如果两个都未传,直接以 arrOne 的值作为 key,arrTwo 作为 value
+ * @param {twoKey} twoKey
+ */
+export const arrTwoToArrObj = (arrOne, arrTwo, oneKey, twoKey) => {
+    if(!oneKey&&!twoKey){
+        return arrOne.map((oneKey, i) => ({ [oneKey]:arrTwo[i] }))
+        // 或者,此方法针对将 arrTwo 的索引作为 key 的情况,arrTwo 值会覆盖 arrOne
+        // return Object.assign({}, arrOne, arrTwo)
+    }else{
+        return arrOne.map((oneKey, i) => ({ oneKey, twoKey: arrTwo[i] }))
+    }
+}
+/**
+ * 数组对象求和
+ * @param {Object} arrObj 数组对象
+ * @param {String} key 数组对应的 key 值
+ */
+export const arrObjSum = (obj, key) => {
+    return obj.reduce((prev, cur) => prev + cur.key, 0)
+}
+
+/**
+ * 6
+ * 数组合并,目前合并一维
+ * @param {Array} arrOne 数组
+ * @param {Array} arrTwo 数组
+ */
+export const arrConcat = (arrOne, arrTwo) => {
+    return [...arrOne, ...arrTwo]
+}
