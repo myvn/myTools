@@ -128,3 +128,18 @@ export const arrSum = arr => {
 export const arrIncludeValue = (arr,  value) => {
     return arr.includes( value)
 }
+/**
+ *  判断是否是字母
+ * @param {Number} data
+ */
+export const checkLetter = data => /^[a-zA-Z]+$/g.test(data)
+
+/**
+ * 判断是否是邮箱地址
+ * @param {String} data
+ */
+export const checkEmail = data => {
+    const reg = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/g
+    if (reg.test(data)) return true
+}
+
