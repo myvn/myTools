@@ -143,3 +143,26 @@ export const checkEmail = data => {
     if (reg.test(data)) return true
 }
 
+/**
+ * 判断是否是手机号，只要是13,14,15,16,17,18,19开头即可
+ * @param {String} data
+ */
+export const checkTelphone = data => {
+    const reg = /^((\+|00)86)?1[3-9]\d{9}$/g
+    if (reg.test(data)) return true
+}
+
+/**
+ * 判断是否是正确的网址
+ * @param {String} url 网址
+ */
+export const checkUrl = url => {
+    const a = document.createElement('a')
+    a.href = url
+    return [
+        /^(http|https):$/.test(a.protocol),
+        a.host,
+        a.pathname !== url,
+        a.pathname !== `/${url}`
+    ].find(x => !x) === undefined
+}
