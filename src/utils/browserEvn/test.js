@@ -1,7 +1,7 @@
-function money (v_money, need_dot) {
+function money(v_money, need_dot) {
     try {
         var p_number = parseFloat(v_money);
-        if(isNaN(p_number)) {
+        if (isNaN(p_number)) {
             return v_money;
         }
         var p_string = "" + p_number;
@@ -37,8 +37,8 @@ function money (v_money, need_dot) {
         return "";
     }
 };
-let as=[]
-for (let i = 0; i <900000000 ; i++) {
+let as = []
+for (let i = 0; i < 900000000; i++) {
     as.push(1)
 }
 console.log(as);
@@ -81,12 +81,12 @@ export const arrDifference = (arrOne, arrTwo) => {
  * @param {twoKey} twoKey
  */
 export const arrTwoToArrObj = (arrOne, arrTwo, oneKey, twoKey) => {
-    if(!oneKey&&!twoKey){
-        return arrOne.map((oneKey, i) => ({ [oneKey]:arrTwo[i] }))
+    if (!oneKey && !twoKey) {
+        return arrOne.map((oneKey, i) => ({[oneKey]: arrTwo[i]}))
         // 或者,此方法针对将 arrTwo 的索引作为 key 的情况,arrTwo 值会覆盖 arrOne
         // return Object.assign({}, arrOne, arrTwo)
-    }else{
-        return arrOne.map((oneKey, i) => ({ oneKey, twoKey: arrTwo[i] }))
+    } else {
+        return arrOne.map((oneKey, i) => ({oneKey, twoKey: arrTwo[i]}))
     }
 }
 /**
@@ -114,7 +114,7 @@ export const arrConcat = (arrOne, arrTwo) => {
  * @param {Array} arr 数组
  */
 export const arrSum = arr => {
-    return arr.reduce((prev, cur)=> {
+    return arr.reduce((prev, cur) => {
         return prev + cur
     }, 0)
 }
@@ -125,8 +125,8 @@ export const arrSum = arr => {
  * @param {Array} arr 数组
  * @param {}  value 值,目前只支持 String,Number,Boolean
  */
-export const arrIncludeValue = (arr,  value) => {
-    return arr.includes( value)
+export const arrIncludeValue = (arr, value) => {
+    return arr.includes(value)
 }
 /**
  *  判断是否是字母
@@ -234,9 +234,23 @@ export const objIsEqual = (oneObj, twoObj) => {
         let propName = aProps[i];
         let propA = oneObj[propName];
         let propB = twoObj[propName];
-        if ( propA !== propB) {
+        if (propA !== propB) {
             return false;
         }
     }
     return true;
+}
+
+/**
+ * localStorage 存贮某一段时间失效
+ * @param {String} key  属性
+ * @param {*} value 存贮值
+ * @param {String} expire 过期时间,毫秒数
+ */
+export const localStorageSetExpire = (key, value, expire) => {
+    if (typeof (value) === 'object') value = JSON.stringify(value)
+    localStorage.setItem(key, value)
+    setTimeout(() => {
+        localStorage.removeItem(key)
+    }, expire)
 }
