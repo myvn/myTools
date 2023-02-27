@@ -179,4 +179,16 @@ export const checkBrowser = () => {
     }
     return Object.keys(obj)[Object.values(obj).indexOf(true)]
 };
+/**
+ * 判断是终端类型,值有ios,android,iPad
+ */
+export const checkIosAndroidIpad = () => {
+    const u = navigator.userAgent;
+    const obj = {
+        ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+        android: u.indexOf("Android") > -1 || u.indexOf("Linux") > -1, //android终端或者uc浏览器
+        iPad: u.indexOf("iPad") > -1, //是否iPad
+    }
+    return Object.keys(obj)[Object.values(obj).indexOf(true)]
+};
 
