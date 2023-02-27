@@ -192,3 +192,13 @@ export const checkIosAndroidIpad = () => {
     return Object.keys(obj)[Object.values(obj).indexOf(true)]
 };
 
+/**
+ * 检查是否是 IphoneX
+ */
+export const checkIsIphoneX = () => {
+    const u = navigator.userAgent;
+    const isIOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
+    if (isIOS && screen.height >= 812) {
+        return true;
+    }
+};
