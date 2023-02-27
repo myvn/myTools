@@ -107,3 +107,24 @@ export const arrObjSum = (obj, key) => {
 export const arrConcat = (arrOne, arrTwo) => {
     return [...arrOne, ...arrTwo]
 }
+
+/**
+ * 7
+ * 数组求和
+ * @param {Array} arr 数组
+ */
+export const arrSum = arr => {
+    return arr.reduce((prev, cur)=> {
+        return prev + cur
+    }, 0)
+}
+
+/**
+ * 8
+ * 数组是否包含某值
+ * @param {Array} arr 数组
+ * @param {}  value 值,目前只支持 String,Number,Boolean
+ */
+export const arrIncludeValue = (arr,  value) => {
+    return arr.includes( value)
+}
