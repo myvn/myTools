@@ -355,3 +355,12 @@ export const strToCapital = (str) => {
 export const strToLowercase = (str) => {
     return str.toLowerCase()
 }
+
+/**
+ * 将字母全部转化成以大写开头
+ * @param {String} str 字符
+ */
+export const strToCapitalLetter = (str) => {
+    const strOne = str.toLowerCase()
+    return strOne.charAt(0).toUpperCase() + strOne.slice(1)
+}
