@@ -323,3 +323,11 @@ export const isNull = (o) => {
 export const cookieRemove = (key) => {
     document.cookie = `${encodeURIComponent(key)}=;expires=${new Date()}`
 }
+/**
+ * 判断字符是否包含某值
+ * @param {String} str 字符
+ * @param {String} value 字符
+ */
+export const strInclude = (str, value) => {
+    return str.includes(value)
+}
