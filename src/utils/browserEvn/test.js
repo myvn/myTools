@@ -331,3 +331,12 @@ export const cookieRemove = (key) => {
 export const strInclude = (str, value) => {
     return str.includes(value)
 }
+
+/**
+ * 判断字符是否以某个字符开头
+ * @param {String} str 字符
+ * @param {String} value 字符
+ */
+export const strBeginWith = (str, value) => {
+    return str.indexOf(value) === 0
+}
