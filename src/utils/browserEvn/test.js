@@ -368,3 +368,11 @@ export const strToCapitalLetter = (str) => {
 export const arrAndSetx = (arrOne, arrTwo) => {
     return arrOne.concat(arrTwo.filter(v => !arrOne.includes(v)))
 }
+/**
+ * 将字母全部转化成以大写开头
+ * @param {String} str 字符
+ */
+export const strToCapitalLetterX = (str) => {
+    const strOne = str.toLowerCase()
+    return strOne.charAt(0).toUpperCase() + strOne.slice(1)
+}
