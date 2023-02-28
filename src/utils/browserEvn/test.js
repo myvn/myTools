@@ -340,3 +340,10 @@ export const strInclude = (str, value) => {
 export const strBeginWith = (str, value) => {
     return str.indexOf(value) === 0
 }
+/**
+ * 将字母全部转化成大写
+ * @param {String} str 字符
+ */
+export const strToCapital = (str) => {
+    return str.toUpperCase()
+}
