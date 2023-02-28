@@ -376,3 +376,13 @@ export const strToCapitalLetterX = (str) => {
     const strOne = str.toLowerCase()
     return strOne.charAt(0).toUpperCase() + strOne.slice(1)
 }
+
+export const arrTwoToArrObjX = (arrOne, arrTwo, oneKey, twoKey) => {
+    if(!oneKey&&!twoKey){
+        return arrOne.map((oneKey, i) => ({ [oneKey]:arrTwo[i] }))
+        // 或者,此方法针对将 arrTwo 的索引作为 key 的情况,arrTwo 值会覆盖 arrOne
+        // return Object.assign({}, arrOne, arrTwo)
+    }else{
+        return arrOne.map((oneKey, i) => ({ oneKey, twoKey: arrTwo[i] }))
+    }
+}
