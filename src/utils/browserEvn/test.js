@@ -315,3 +315,11 @@ export function getQueryString(name) {
 export const isNull = (o) => {
     return Object.prototype.toString.call(o).slice(8, -1) === 'Null'
 }
+
+/**
+ * cookie 删除
+ * @param {String} key  属性
+ */
+export const cookieRemove = (key) => {
+    document.cookie = `${encodeURIComponent(key)}=;expires=${new Date()}`
+}
