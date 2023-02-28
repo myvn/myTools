@@ -347,3 +347,11 @@ export const strBeginWith = (str, value) => {
 export const strToCapital = (str) => {
     return str.toUpperCase()
 }
+
+/**
+ * 将字母全部转化成小写
+ * @param {String} str 字符
+ */
+export const strToLowercase = (str) => {
+    return str.toLowerCase()
+}
