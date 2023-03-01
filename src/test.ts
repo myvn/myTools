@@ -1,4 +1,4 @@
-function money(v_money, need_dot) {
+export function money(v_money, need_dot) {
     try {
         var p_number = parseFloat(v_money);
         if (isNaN(p_number)) {
@@ -94,7 +94,7 @@ export const arrTwoToArrObj = (arrOne, arrTwo, oneKey, twoKey) => {
  * @param {Object} arrObj 数组对象
  * @param {String} key 数组对应的 key 值
  */
-export const arrObjSum = (obj, key) => {
+export const arrObjSum = (obj) => {
     return obj.reduce((prev, cur) => prev + cur.key, 0)
 }
 
@@ -275,7 +275,7 @@ export const throttle = function(func, delay) {
     return function() {
         if (!timer) {
             timer = setTimeout(() => {
-                func.apply(this, arguments)
+                func.apply(this)
                 // 或者直接 func()
                 timer = null
             }, delay)
@@ -292,7 +292,7 @@ export const debounce = function(fn, wait) {
     return function() {
         if (timeout !== null) clearTimeout(timeout)// 如果多次触发将上次记录延迟清除掉
         timeout = setTimeout(() => {
-            fn.apply(this, arguments)
+            fn.apply(this)
             // 或者直接 fn()
             timeout = null
         }, wait)
