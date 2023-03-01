@@ -61,6 +61,9 @@ export const arrAndSet = (arrOne, arrTwo) => {
 export const arrIntersection = (arrOne, arrTwo) => {
     return arrOne.filter(v => arrTwo.includes(v))
 }
+export const arrIntersectiosn = (arrOne, arrTwo) => {
+    return arrOne.filter(v => arrTwo.includes(v))
+}
 
 /**
  * 数组差集,只支持一维数组
