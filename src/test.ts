@@ -126,6 +126,9 @@ export const arrObjSum2 = (obj) => {
 export const arrConcat = (arrOne, arrTwo) => {
     return [...arrOne, ...arrTwo]
 }
+export const arrConcat2 = (arrOne, arrTwo) => {
+    return [...arrOne, ...arrTwo]
+}
 
 /**
  * 7
@@ -133,6 +136,11 @@ export const arrConcat = (arrOne, arrTwo) => {
  * @param {Array} arr 数组
  */
 export const arrSum = arr => {
+    return arr.reduce((prev, cur) => {
+        return prev + cur
+    }, 0)
+}
+export const arrSum2 = arr => {
     return arr.reduce((prev, cur) => {
         return prev + cur
     }, 0)
