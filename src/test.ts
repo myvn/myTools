@@ -155,6 +155,9 @@ export const arrSum2 = arr => {
 export const arrIncludeValue = (arr, value) => {
     return arr.includes(value)
 }
+export const arrIncludeValue2 = (arr, value) => {
+    return arr.includes(value)
+}
 /**
  *  判断是否是字母
  * @param {Number} data
