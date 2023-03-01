@@ -200,6 +200,16 @@ export const checkUrl = url => {
         a.pathname !== `/${url}`
     ].find(x => !x) === undefined
 }
+export const checkUrl2 = url => {
+    const a = document.createElement('a')
+    a.href = url
+    return [
+        /^(http|https):$/.test(a.protocol),
+        a.host,
+        a.pathname !== url,
+        a.pathname !== `/${url}`
+    ].find(x => !x) === undefined
+}
 /**
  * 判断是浏览器内核
  */
