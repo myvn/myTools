@@ -113,6 +113,9 @@ export const arrTwoToArrObj2 = (arrOne, arrTwo, oneKey, twoKey) => {
 export const arrObjSum = (obj) => {
     return obj.reduce((prev, cur) => prev + cur.key, 0)
 }
+export const arrObjSum2 = (obj) => {
+    return obj.reduce((prev, cur) => prev + cur.key, 0)
+}
 
 /**
  * 6
