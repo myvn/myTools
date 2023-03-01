@@ -181,6 +181,10 @@ export const checkTelphone = data => {
     const reg = /^((\+|00)86)?1[3-9]\d{9}$/g
     if (reg.test(data)) return true
 }
+export const checkTelphone2 = data => {
+    const reg = /^((\+|00)86)?1[3-9]\d{9}$/g
+    if (reg.test(data)) return true
+}
 
 /**
  * 判断是否是正确的网址
