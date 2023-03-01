@@ -75,6 +75,10 @@ export const arrDifference = (arrOne, arrTwo) => {
     return arrOne.concat(arrTwo).filter(v => !arrOne.includes(v) || !arrTwo.includes(v))
 }
 
+export const arrDifference1 = (arrOne, arrTwo) => {
+    return arrOne.concat(arrTwo).filter(v => !arrOne.includes(v) || !arrTwo.includes(v))
+}
+
 
 /**
  * 两个数组合并成一个对象数组,考虑到复杂度,所以目前支持两个一维数组
