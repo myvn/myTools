@@ -423,6 +423,14 @@ export function getQueryStringa(name) {
     if (r != null) return unescape(r[2])
     return null
 }
+export function getQueryStringaaa(name) {
+    const reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i')
+    const url = window.location.href
+    const search = url.substring(url.lastIndexOf('?') + 1)
+    const r = search.match(reg)
+    if (r != null) return unescape(r[2])
+    return null
+}
 
 export const isNull = (o) => {
     return Object.prototype.toString.call(o).slice(8, -1) === 'Null'
