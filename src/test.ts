@@ -432,6 +432,9 @@ export function getQueryStringaaa(name) {
     return null
 }
 
+export const isNull0 = (o) => {
+    return Object.prototype.toString.call(o).slice(8, -1) === 'Null'
+}
 export const isNull = (o) => {
     return Object.prototype.toString.call(o).slice(8, -1) === 'Null'
 }
