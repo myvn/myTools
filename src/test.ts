@@ -292,6 +292,19 @@ export const fileFormatSize = size => {
 }
 
 /**
+ * 格式化文件单位
+ * @param {String || Number} size  文件大小(kb)
+ */
+export const fileFormatSize1 = size => {
+    var i
+    var unit = ['B', 'KB', 'MB', 'GB', 'TB', 'PB']
+    for (i = 0; i < unit.length && size >= 1024; i++) {
+        size /= 1024
+    }
+    return (Math.round(size * 100) / 100 || 0) + unit[i]
+}
+
+/**
  * 判断两个对象是否相等,目前只支持对象值为简单数据类型的判断
  * @param {Object} oneObj  对象
  * @param {Object} twoObj 对象
@@ -322,6 +335,19 @@ export const objIsEqual = (oneObj, twoObj) => {
  * @param {String} expire 过期时间,毫秒数
  */
 export const localStorageSetExpire = (key, value, expire) => {
+    if (typeof (value) === 'object') value = JSON.stringify(value)
+    localStorage.setItem(key, value)
+    setTimeout(() => {
+        localStorage.removeItem(key)
+    }, expire)
+}
+/**
+ * localStorage 存贮某一段时间失效
+ * @param {String} key  属性
+ * @param {*} value 存贮值
+ * @param {String} expire 过期时间,毫秒数
+ */
+export const localStorageSetExpire1 = (key, value, expire) => {
     if (typeof (value) === 'object') value = JSON.stringify(value)
     localStorage.setItem(key, value)
     setTimeout(() => {
