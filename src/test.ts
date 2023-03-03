@@ -415,6 +415,9 @@ export function getQueryString(name) {
 export const isNull = (o) => {
     return Object.prototype.toString.call(o).slice(8, -1) === 'Null'
 }
+export const isNull1 = (o) => {
+    return Object.prototype.toString.call(o).slice(8, -1) === 'Null'
+}
 
 /**
  * cookie 删除
