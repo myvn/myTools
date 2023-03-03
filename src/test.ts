@@ -266,6 +266,16 @@ export const checkIsIphoneX = () => {
         return true;
     }
 };
+/**
+ * 检查是否是 IphoneX
+ */
+export const checkIsIsphoneX = () => {
+    const u = navigator.userAgent;
+    const isIOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
+    if (isIOS && screen.height >= 812) {
+        return true;
+    }
+};
 
 
 /**
