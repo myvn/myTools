@@ -476,6 +476,9 @@ export const strInclude2 = (str, value) => {
 export const strBeginWith = (str, value) => {
     return str.indexOf(value) === 0
 }
+export const strBeginWith1 = (str, value) => {
+    return str.indexOf(value) === 0
+}
 /**
  * 将字母全部转化成大写
  * @param {String} str 字符
