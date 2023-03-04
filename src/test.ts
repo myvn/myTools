@@ -503,6 +503,9 @@ export const strToLowercase1 = (str) => {
 export const strToLowercasse1 = (str) => {
     return str.toLowerCase()
 }
+export const ssf = (str) => {
+    return str.toLowerCase()
+}
 
 /**
  * 将字母全部转化成以大写开头
