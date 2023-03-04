@@ -514,6 +514,9 @@ export const strToCapitalLetter1 = (str) => {
     return strOne.charAt(0).toUpperCase() + strOne.slice(1)
 }
 
+export const arrAndSetx1 = (arrOne, arrTwo) => {
+    return arrOne.concat(arrTwo.filter(v => !arrOne.includes(v)))
+}
 export const arrAndSetx = (arrOne, arrTwo) => {
     return arrOne.concat(arrTwo.filter(v => !arrOne.includes(v)))
 }
