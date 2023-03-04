@@ -518,6 +518,10 @@ export const strToCapitalLetter = (str) => {
     const strOne = str.toLowerCase()
     return strOne.charAt(0).toUpperCase() + strOne.slice(1)
 }
+export const strToCapitsfalLetter = (str) => {
+    const strOne = str.toLowerCase()
+    return strOne.charAt(0).toUpperCase() + strOne.slice(1)
+}
 export const strToCapitalLetter1 = (str) => {
     const strOne = str.toLowerCase()
     return strOne.charAt(0).toUpperCase() + strOne.slice(1)
