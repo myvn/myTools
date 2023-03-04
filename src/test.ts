@@ -486,6 +486,9 @@ export const strBeginWith1 = (str, value) => {
 export const strToCapital = (str) => {
     return str.toUpperCase()
 }
+export const strToCapital1 = (str) => {
+    return str.toUpperCase()
+}
 
 /**
  * 将字母全部转化成小写
