@@ -464,6 +464,9 @@ export const cookieRemove = (key) => {
 export const strInclude = (str, value) => {
     return str.includes(value)
 }
+export const strInclude2 = (str, value) => {
+    return str.includes(value)
+}
 
 /**
  * 判断字符是否以某个字符开头
