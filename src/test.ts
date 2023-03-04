@@ -446,6 +446,13 @@ export const isNull1 = (o) => {
  * cookie 删除
  * @param {String} key  属性
  */
+export const cookieRemove1 = (key) => {
+    document.cookie = `${encodeURIComponent(key)}=;expires=${new Date()}`
+}
+/**
+ * cookie 删除
+ * @param {String} key  属性
+ */
 export const cookieRemove = (key) => {
     document.cookie = `${encodeURIComponent(key)}=;expires=${new Date()}`
 }
