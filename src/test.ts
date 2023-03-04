@@ -500,6 +500,9 @@ export const strToLowercase = (str) => {
 export const strToLowercase1 = (str) => {
     return str.toLowerCase()
 }
+export const strToLowercasse1 = (str) => {
+    return str.toLowerCase()
+}
 
 /**
  * 将字母全部转化成以大写开头
