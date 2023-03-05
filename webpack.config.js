@@ -5,14 +5,14 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const WorkboxWebpackPlugin = require("workbox-webpack-plugin");
 
-const isProduction = process.env.NODE_ENV == "production";
+const isProduction = process.env.NODE_ENV === "production";
 
 const stylesHandler = MiniCssExtractPlugin.loader;
 
 const config = {
-  entry: "./src/index.ts",
+  entry: path.join(__dirname, "/src/index.ts"),
   output: {
-    path: path.resolve(__dirname, "dist"),
+    path: path.join(__dirname, "dist"),
     library: "kits", // string,
     // 导出库(exported library)的类型
     libraryTarget: "umd",
