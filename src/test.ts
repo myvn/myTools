@@ -497,6 +497,9 @@ export const strToCapital1 = (str) => {
 export const strToLowercase = (str) => {
     return str.toLowerCase()
 }
+export const strToLowercas1e = (str) => {
+    return str.toLowerCase()
+}
 export const strToLowercase1 = (str) => {
     return str.toLowerCase()
 }
