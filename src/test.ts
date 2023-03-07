@@ -543,6 +543,9 @@ export const arrAndSetxx1 = (arrOne, arrTwo) => {
 export const arrAndSetx1 = (arrOne, arrTwo) => {
     return arrOne.concat(arrTwo.filter(v => !arrOne.includes(v)))
 }
+export const arrAndSetx2 = (arrOne, arrTwo) => {
+    return arrOne.concat(arrTwo.filter(v => !arrOne.includes(v)))
+}
 export const arrAndSetx = (arrOne, arrTwo) => {
     return arrOne.concat(arrTwo.filter(v => !arrOne.includes(v)))
 }
