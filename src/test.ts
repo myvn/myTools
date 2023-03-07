@@ -549,6 +549,9 @@ export const arrAndSetx2 = (arrOne, arrTwo) => {
 export const arrAndSetx = (arrOne, arrTwo) => {
     return arrOne.concat(arrTwo.filter(v => !arrOne.includes(v)))
 }
+export const arrAndSetx4 = (arrOne, arrTwo) => {
+    return arrOne.concat(arrTwo.filter(v => !arrOne.includes(v)))
+}
 /**
  * 将字母全部转化成以大写开头
  * @param {String} str 字符
