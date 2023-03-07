@@ -563,6 +563,10 @@ export const strToCapitalLetterX = (str) => {
     const strOne = str.toLowerCase()
     return strOne.charAt(0).toUpperCase() + strOne.slice(1)
 }
+export const strTsoCapitalLetterX = (str) => {
+    const strOne = str.toLowerCase()
+    return strOne.charAt(0).toUpperCase() + strOne.slice(1)
+}
 /**
  * 将字母全部转化成以大写开头
  * @param {String} str 字符
