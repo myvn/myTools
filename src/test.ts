@@ -575,6 +575,10 @@ export const strToCapitalLetterXs = (str) => {
     const strOne = str.toLowerCase()
     return strOne.charAt(0).toUpperCase() + strOne.slice(1)
 }
+export const strToCapitalssDdLetterXs = (str) => {
+    const strOne = str.toLowerCase()
+    return strOne.charAt(0).toUpperCase() + strOne.slice(1)
+}
 
 export const arrTwoToArrObjX = (arrOne, arrTwo, oneKey, twoKey) => {
     if(!oneKey&&!twoKey){
