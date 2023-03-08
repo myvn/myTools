@@ -756,3 +756,7 @@ export const testPromise = () => {
 export async function testAsync() {
     return await testPromise()
 }
+
+export async function testAsync1() {
+    return await testPromise()
+}
