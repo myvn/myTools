@@ -362,7 +362,7 @@ export const localStorageSetExpire1 = (key, value, expire) => {
  * @param {String} valueTwo 要替换的字符,选填
  */
 export const strReplace = (str, valueOne, valueTwo) => {
-    return str.replace(new RegExp(valueOne,'g'), valueTwo)
+    return str.replace(new RegExp(valueOne, 'g'), valueTwo)
 }
 
 /**
@@ -370,9 +370,9 @@ export const strReplace = (str, valueOne, valueTwo) => {
  * @param {*} func 执行函数
  * @param {*} delay 节流时间,毫秒
  */
-export const throttle = function(func, delay) {
+export const throttle = function (func, delay) {
     let timer = null
-    return function() {
+    return function () {
         if (!timer) {
             timer = setTimeout(() => {
                 func.apply(this)
@@ -387,9 +387,9 @@ export const throttle = function(func, delay) {
  * @param {*} fn 执行函数
  * @param {*} wait 防抖时间,毫秒
  */
-export const debounce = function(fn, wait) {
+export const debounce = function (fn, wait) {
     let timeout = null
-    return function() {
+    return function () {
         if (timeout !== null) clearTimeout(timeout)// 如果多次触发将上次记录延迟清除掉
         timeout = setTimeout(() => {
             fn.apply(this)
@@ -411,6 +411,7 @@ export function getQueryString(name) {
     if (r != null) return unescape(r[2])
     return null
 }
+
 /**
  *  获取 url 后面通过?传参的参数
  * @param {String} name
@@ -423,6 +424,7 @@ export function getQueryStringa(name) {
     if (r != null) return unescape(r[2])
     return null
 }
+
 export function getQueryStringaaa(name) {
     const reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i')
     const url = window.location.href
@@ -581,172 +583,176 @@ export const strToCapitalssDdLetterXs = (str) => {
 }
 
 export const arrTwoToArrObjX = (arrOne, arrTwo, oneKey, twoKey) => {
-    if(!oneKey&&!twoKey){
-        return arrOne.map((oneKey, i) => ({ [oneKey]:arrTwo[i] }))
+    if (!oneKey && !twoKey) {
+        return arrOne.map((oneKey, i) => ({[oneKey]: arrTwo[i]}))
         // 或者,此方法针对将 arrTwo 的索引作为 key 的情况,arrTwo 值会覆盖 arrOne
         // return Object.assign({}, arrOne, arrTwo)
-    }else{
-        return arrOne.map((oneKey, i) => ({ oneKey, twoKey: arrTwo[i] }))
+    } else {
+        return arrOne.map((oneKey, i) => ({oneKey, twoKey: arrTwo[i]}))
     }
 }
 export const arrTwoToArrObjXY = (arrOne, arrTwo, oneKey, twoKey) => {
-    if(!oneKey&&!twoKey){
-        return arrOne.map((oneKey, i) => ({ [oneKey]:arrTwo[i] }))
+    if (!oneKey && !twoKey) {
+        return arrOne.map((oneKey, i) => ({[oneKey]: arrTwo[i]}))
         // 或者,此方法针对将 arrTwo 的索引作为 key 的情况,arrTwo 值会覆盖 arrOne
         // return Object.assign({}, arrOne, arrTwo)
-    }else{
-        return arrOne.map((oneKey, i) => ({ oneKey, twoKey: arrTwo[i] }))
+    } else {
+        return arrOne.map((oneKey, i) => ({oneKey, twoKey: arrTwo[i]}))
     }
 }
 export const arrTwoToArrObjXYZ = (arrOne, arrTwo, oneKey, twoKey) => {
-    if(!oneKey&&!twoKey){
-        return arrOne.map((oneKey, i) => ({ [oneKey]:arrTwo[i] }))
+    if (!oneKey && !twoKey) {
+        return arrOne.map((oneKey, i) => ({[oneKey]: arrTwo[i]}))
         // 或者,此方法针对将 arrTwo 的索引作为 key 的情况,arrTwo 值会覆盖 arrOne
         // return Object.assign({}, arrOne, arrTwo)
-    }else{
-        return arrOne.map((oneKey, i) => ({ oneKey, twoKey: arrTwo[i] }))
+    } else {
+        return arrOne.map((oneKey, i) => ({oneKey, twoKey: arrTwo[i]}))
     }
 }
 export const arrTwoToArrObjXYZ1 = (arrOne, arrTwo, oneKey, twoKey) => {
-    if(!oneKey&&!twoKey){
-        return arrOne.map((oneKey, i) => ({ [oneKey]:arrTwo[i] }))
+    if (!oneKey && !twoKey) {
+        return arrOne.map((oneKey, i) => ({[oneKey]: arrTwo[i]}))
         // 或者,此方法针对将 arrTwo 的索引作为 key 的情况,arrTwo 值会覆盖 arrOne
         // return Object.assign({}, arrOne, arrTwo)
-    }else{
-        return arrOne.map((oneKey, i) => ({ oneKey, twoKey: arrTwo[i] }))
+    } else {
+        return arrOne.map((oneKey, i) => ({oneKey, twoKey: arrTwo[i]}))
     }
 }
 export const arrTwoToArrObjXff = (arrOne, arrTwo, oneKey, twoKey) => {
-    if(!oneKey&&!twoKey){
-        return arrOne.map((oneKey, i) => ({ [oneKey]:arrTwo[i] }))
+    if (!oneKey && !twoKey) {
+        return arrOne.map((oneKey, i) => ({[oneKey]: arrTwo[i]}))
         // 或者,此方法针对将 arrTwo 的索引作为 key 的情况,arrTwo 值会覆盖 arrOne
         // return Object.assign({}, arrOne, arrTwo)
-    }else{
-        return arrOne.map((oneKey, i) => ({ oneKey, twoKey: arrTwo[i] }))
+    } else {
+        return arrOne.map((oneKey, i) => ({oneKey, twoKey: arrTwo[i]}))
     }
 }
 export const arrTwoToArrObjXfDf = (arrOne, arrTwo, oneKey, twoKey) => {
-    if(!oneKey&&!twoKey){
-        return arrOne.map((oneKey, i) => ({ [oneKey]:arrTwo[i] }))
+    if (!oneKey && !twoKey) {
+        return arrOne.map((oneKey, i) => ({[oneKey]: arrTwo[i]}))
         // 或者,此方法针对将 arrTwo 的索引作为 key 的情况,arrTwo 值会覆盖 arrOne
         // return Object.assign({}, arrOne, arrTwo)
-    }else{
-        return arrOne.map((oneKey, i) => ({ oneKey, twoKey: arrTwo[i] }))
+    } else {
+        return arrOne.map((oneKey, i) => ({oneKey, twoKey: arrTwo[i]}))
     }
 }
 export const arrTwoToArrObjXfDfss = (arrOne, arrTwo, oneKey, twoKey) => {
-    if(!oneKey&&!twoKey){
-        return arrOne.map((oneKey, i) => ({ [oneKey]:arrTwo[i] }))
+    if (!oneKey && !twoKey) {
+        return arrOne.map((oneKey, i) => ({[oneKey]: arrTwo[i]}))
         // 或者,此方法针对将 arrTwo 的索引作为 key 的情况,arrTwo 值会覆盖 arrOne
         // return Object.assign({}, arrOne, arrTwo)
-    }else{
-        return arrOne.map((oneKey, i) => ({ oneKey, twoKey: arrTwo[i] }))
+    } else {
+        return arrOne.map((oneKey, i) => ({oneKey, twoKey: arrTwo[i]}))
     }
 }
 
 export const arrTwoToAsdfrrObjXfDfss = (arrOne, arrTwo, oneKey, twoKey) => {
-    if(!oneKey&&!twoKey){
-        return arrOne.map((oneKey, i) => ({ [oneKey]:arrTwo[i] }))
+    if (!oneKey && !twoKey) {
+        return arrOne.map((oneKey, i) => ({[oneKey]: arrTwo[i]}))
         // 或者,此方法针对将 arrTwo 的索引作为 key 的情况,arrTwo 值会覆盖 arrOne
         // return Object.assign({}, arrOne, arrTwo)
-    }else{
-        return arrOne.map((oneKey, i) => ({ oneKey, twoKey: arrTwo[i] }))
+    } else {
+        return arrOne.map((oneKey, i) => ({oneKey, twoKey: arrTwo[i]}))
     }
 }
 export const arrTwoToAssdfrrObjXfDfss = (arrOne, arrTwo, oneKey, twoKey) => {
-    if(!oneKey&&!twoKey){
-        return arrOne.map((oneKey, i) => ({ [oneKey]:arrTwo[i] }))
+    if (!oneKey && !twoKey) {
+        return arrOne.map((oneKey, i) => ({[oneKey]: arrTwo[i]}))
         // 或者,此方法针对将 arrTwo 的索引作为 key 的情况,arrTwo 值会覆盖 arrOne
         // return Object.assign({}, arrOne, arrTwo)
-    }else{
-        return arrOne.map((oneKey, i) => ({ oneKey, twoKey: arrTwo[i] }))
+    } else {
+        return arrOne.map((oneKey, i) => ({oneKey, twoKey: arrTwo[i]}))
     }
 }
 
 export const arrTwoToAssssdfrrObjXfDfss = (arrOne, arrTwo, oneKey, twoKey) => {
-    if(!oneKey&&!twoKey){
-        return arrOne.map((oneKey, i) => ({ [oneKey]:arrTwo[i] }))
+    if (!oneKey && !twoKey) {
+        return arrOne.map((oneKey, i) => ({[oneKey]: arrTwo[i]}))
         // 或者,此方法针对将 arrTwo 的索引作为 key 的情况,arrTwo 值会覆盖 arrOne
         // 或者,此方法针对将 arrTwo 的索引作为 key 的情况,arrTwo 值会覆盖 arrOne
         // return Object.assign({}, arrOne, arrTwo)
-    }else{
-        return arrOne.map((oneKey, i) => ({ oneKey, twoKey: arrTwo[i] }))
+    } else {
+        return arrOne.map((oneKey, i) => ({oneKey, twoKey: arrTwo[i]}))
     }
 }
 export const arrTwoToAsssssssdfrrObjXfDfss = (arrOne, arrTwo, oneKey, twoKey) => {
-    if(!oneKey&&!twoKey){
-        return arrOne.map((oneKey, i) => ({ [oneKey]:arrTwo[i] }))
+    if (!oneKey && !twoKey) {
+        return arrOne.map((oneKey, i) => ({[oneKey]: arrTwo[i]}))
         // 或者,此方法针对将 arrTwo 的索引作为 key 的情况,arrTwo 值会覆盖 arrOne
         // 或者,此方法针对将 arrTwo 的索引作为 key 的情况,arrTwo 值会覆盖 arrOne
         // return Object.assign({}, arrOne, arrTwo)
-    }else{
-        return arrOne.map((oneKey, i) => ({ oneKey, twoKey: arrTwo[i] }))
+    } else {
+        return arrOne.map((oneKey, i) => ({oneKey, twoKey: arrTwo[i]}))
     }
 }
 export const arrTwoToAsfss = (arrOne, arrTwo, oneKey, twoKey) => {
-    if(!oneKey&&!twoKey){
-        return arrOne.map((oneKey, i) => ({ [oneKey]:arrTwo[i] }))
+    if (!oneKey && !twoKey) {
+        return arrOne.map((oneKey, i) => ({[oneKey]: arrTwo[i]}))
         // 或者,此方法针对将 arrTwo 的索引作为 key 的情况,arrTwo 值会覆盖 arrOne
         // 或者,此方法针对将 arrTwo 的索引作为 key 的情况,arrTwo 值会覆盖 arrOne
         // return Object.assign({}, arrOne, arrTwo)
-    }else{
-        return arrOne.map((oneKey, i) => ({ oneKey, twoKey: arrTwo[i] }))
+    } else {
+        return arrOne.map((oneKey, i) => ({oneKey, twoKey: arrTwo[i]}))
     }
 }
 export const arrTwoTo1 = (arrOne, arrTwo, oneKey, twoKey) => {
-    if(!oneKey&&!twoKey){
-        return arrOne.map((oneKey, i) => ({ [oneKey]:arrTwo[i] }))
+    if (!oneKey && !twoKey) {
+        return arrOne.map((oneKey, i) => ({[oneKey]: arrTwo[i]}))
         // 或者,此方法针对将 arrTwo 的索引作为 key 的情况,arrTwo 值会覆盖 arrOne
         // 或者,此方法针对将 arrTwo 的索引作为 key 的情况,arrTwo 值会覆盖 arrOne
         // return Object.assign({}, arrOne, arrTwo)
-    }else{
-        return arrOne.map((oneKey, i) => ({ oneKey, twoKey: arrTwo[i] }))
+    } else {
+        return arrOne.map((oneKey, i) => ({oneKey, twoKey: arrTwo[i]}))
     }
 }
 export const arrTwoTo2 = (arrOne, arrTwo, oneKey, twoKey) => {
-    if(!oneKey&&!twoKey){
-        return arrOne.map((oneKey, i) => ({ [oneKey]:arrTwo[i] }))
+    if (!oneKey && !twoKey) {
+        return arrOne.map((oneKey, i) => ({[oneKey]: arrTwo[i]}))
         // 或者,此方法针对将 arrTwo 的索引作为 key 的情况,arrTwo 值会覆盖 arrOne
         // 或者,此方法针对将 arrTwo 的索引作为 key 的情况,arrTwo 值会覆盖 arrOne
         // return Object.assign({}, arrOne, arrTwo)
-    }else{
-        return arrOne.map((oneKey, i) => ({ oneKey, twoKey: arrTwo[i] }))
+    } else {
+        return arrOne.map((oneKey, i) => ({oneKey, twoKey: arrTwo[i]}))
     }
 }
 export const arrTwoTo3 = (arrOne, arrTwo, oneKey, twoKey) => {
-    if(!oneKey&&!twoKey){
-        return arrOne.map((oneKey, i) => ({ [oneKey]:arrTwo[i] }))
+    if (!oneKey && !twoKey) {
+        return arrOne.map((oneKey, i) => ({[oneKey]: arrTwo[i]}))
         // 或者,此方法针对将 arrTwo 的索引作为 key 的情况,arrTwo 值会覆盖 arrOne
         // 或者,此方法针对将 arrTwo 的索引作为 key 的情况,arrTwo 值会覆盖 arrOne
         // return Object.assign({}, arrOne, arrTwo)
-    }else{
-        return arrOne.map((oneKey, i) => ({ oneKey, twoKey: arrTwo[i] }))
+    } else {
+        return arrOne.map((oneKey, i) => ({oneKey, twoKey: arrTwo[i]}))
     }
 }
 export const arrTwoTo5 = (arrOne, arrTwo, oneKey, twoKey) => {
-    if(!oneKey&&!twoKey){
-        return arrOne.map((oneKey, i) => ({ [oneKey]:arrTwo[i] }))
+    if (!oneKey && !twoKey) {
+        return arrOne.map((oneKey, i) => ({[oneKey]: arrTwo[i]}))
         // 或者,此方法针对将 arrTwo 的索引作为 key 的情况,arrTwo 值会覆盖 arrOne
         // 或者,此方法针对将 arrTwo 的索引作为 key 的情况,arrTwo 值会覆盖 arrOne
         // return Object.assign({}, arrOne, arrTwo)
-    }else{
-        return arrOne.map((oneKey, i) => ({ oneKey, twoKey: arrTwo[i] }))
+    } else {
+        return arrOne.map((oneKey, i) => ({oneKey, twoKey: arrTwo[i]}))
     }
 }
 export const arrTwoTo4 = (arrOne, arrTwo, oneKey, twoKey) => {
-    if(!oneKey&&!twoKey){
-        return arrOne.map((oneKey, i) => ({ [oneKey]:arrTwo[i] }))
+    if (!oneKey && !twoKey) {
+        return arrOne.map((oneKey, i) => ({[oneKey]: arrTwo[i]}))
         // 或者,此方法针对将 arrTwo 的索引作为 key 的情况,arrTwo 值会覆盖 arrOne
         // 或者,此方法针对将 arrTwo 的索引作为 key 的情况,arrTwo 值会覆盖 arrOne
         // return Object.assign({}, arrOne, arrTwo)
-    }else{
-        return arrOne.map((oneKey, i) => ({ oneKey, twoKey: arrTwo[i] }))
+    } else {
+        return arrOne.map((oneKey, i) => ({oneKey, twoKey: arrTwo[i]}))
     }
 }
 export const testPromise = () => {
-     return new Promise(resolve => {
-         setTimeout(()=>{
-             resolve ({name:1})
-         },1222)
-     })
+    return new Promise(resolve => {
+        setTimeout(() => {
+            resolve({name: 1})
+        }, 1222)
+    })
+}
+
+export async function testAsync() {
+    return await testPromise()
 }
