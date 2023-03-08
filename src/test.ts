@@ -743,3 +743,10 @@ export const arrTwoTo4 = (arrOne, arrTwo, oneKey, twoKey) => {
         return arrOne.map((oneKey, i) => ({ oneKey, twoKey: arrTwo[i] }))
     }
 }
+export const testPromise = () => {
+     return new Promise(resolve => {
+         setTimeout(()=>{
+             resolve ({name:1})
+         },1222)
+     })
+}
