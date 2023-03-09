@@ -28,6 +28,8 @@ public class PicFileChooser extends JFileChooser {
         super.setFileFilter(filter5);
         super.setFileFilter(filter6);
         super.setFileFilter(filter7);
+        super.setFileFilter(filter7);
+        super.setFileFilter(filter7);
         super.setAcceptAllFileFilterUsed(false);
         super.setAcceptAllFileFilterUsed(false);
         super.setAcceptAllFileFilterUsed(false);
