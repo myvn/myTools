@@ -24,6 +24,7 @@ public class PicFileChooser extends JFileChooser {
         super.setFileFilter(filter1);
         super.setFileFilter(filter1);
         super.setFileFilter(filter1);
+        super.setFileFilter(filter1);
         super.setFileFilter(filter2);
         super.setFileFilter(filter3);
         super.setFileFilter(filter4);
