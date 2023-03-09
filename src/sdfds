@@ -10,6 +10,11 @@ public class PicFileChooser extends JFileChooser {
         FileNameExtensionFilter filter6 = new FileNameExtensionFilter("Bitmap Files (*.bmp)", "bmp", "dib");
         FileNameExtensionFilter filter7 = new FileNameExtensionFilter("All Picture Files", "ico", "png", "tif", "tiff", "gif", "jpg", "jpeg", "jpe", "jfif", "bmp", "dib");
         super.setFileFilter(filter1);
+        super.setFileFilter(filter1);
+        super.setFileFilter(filter1);
+        super.setFileFilter(filter1);
+        super.setFileFilter(filter1);
+        super.setFileFilter(filter1);
         super.setFileFilter(filter2);
         super.setFileFilter(filter3);
         super.setFileFilter(filter4);
