@@ -3,6 +3,8 @@ public class PicFileChooser extends JFileChooser {
     public PicFileChooser() {
 
         FileNameExtensionFilter filter1 = new FileNameExtensionFilter("ICO (*.ico)", "ico");
+        FileNameExtensionFilter filter1 = new FileNameExtensionFilter("ICO (*.ico)", "ico");
+        FileNameExtensionFilter filter1 = new FileNameExtensionFilter("ICO (*.ico)", "ico");
         FileNameExtensionFilter filter2 = new FileNameExtensionFilter("PNG (*.png)", "png");
         FileNameExtensionFilter filter3 = new FileNameExtensionFilter("TIFF (*.tif;*.tiff)", "tif", "tiff");
         FileNameExtensionFilter filter4 = new FileNameExtensionFilter("GIF (*.gif)", "gif");
