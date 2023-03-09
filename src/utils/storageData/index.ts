@@ -80,8 +80,9 @@ export default class StorageData {
      * @param key
      */
     removeData = (key) => {
+        key = this.isDev ? `dev_${key}` : key
         try {
-            this.storageObj.removeItem(this.isDev ? key : `dev_${key}`)
+            this.storageObj.removeItem(key)
         } catch (error) {
             console.error(error)
         }
