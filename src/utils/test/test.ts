@@ -127,3 +127,12 @@ export const checkEmail = data => {
     const reg = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/g
     if (reg.test(data)) return true
 }
+
+/**
+ * 判断是否是手机号，只要是13,14,15,16,17,18,19开头即可
+ * @param {String} data
+ */
+export const checkTelPhone = data => {
+    const reg = /^((\+|00)86)?1[3-9]\d{9}$/g
+    if (reg.test(data)) return true
+}
