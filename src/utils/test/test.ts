@@ -45,3 +45,12 @@ export function money(v_money, need_dot) {
 export const arrAndSet = (arrOne, arrTwo) => {
     return arrOne.concat(arrTwo.filter(v => !arrOne.includes(v)))
 }
+
+/**
+ * 数组交集,只支持一维数组
+ * @param {Array} arrOne
+ * @param {Array} arrTwo
+ */
+export const arrIntersection = (arrOne, arrTwo) => {
+    return arrOne.filter(v => arrTwo.includes(v))
+}
