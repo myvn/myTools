@@ -90,3 +90,12 @@ export const arrObjSum = (obj) => {
 export const arrConcat = (arrOne, arrTwo) => {
     return [...arrOne, ...arrTwo]
 }
+
+/**
+ * 数组是否包含某值
+ * @param {Array} arr 数组
+ * @param {}  value 值,目前只支持 String,Number,Boolean
+ */
+export const arrIncludeValue = (arr,  value) => {
+    return arr.includes( value)
+}
