@@ -54,3 +54,20 @@ export const arrAndSet = (arrOne, arrTwo) => {
 export const arrIntersection = (arrOne, arrTwo) => {
     return arrOne.filter(v => arrTwo.includes(v))
 }
+
+/**
+ * 两个数组合并成一个对象数组,考虑到复杂度,所以目前支持两个一维数组
+ * @param {Array} arrOne
+ * @param {Array} arrTwo
+ * @param {oneKey} oneKey 选填,如果两个都未传,直接以 arrOne 的值作为 key,arrTwo 作为 value
+ * @param {twoKey} twoKey
+ */
+export const arrTwoToArrObj = (arrOne, arrTwo, oneKey, twoKey) => {
+    if(!oneKey&&!twoKey){
+        return arrOne.map((oneKey, i) => ({ [oneKey]:arrTwo[i] }))
+        // 或者,此方法针对将 arrTwo 的索引作为 key 的情况,arrTwo 值会覆盖 arrOne
+        // return Object.assign({}, arrOne, arrTwo)
+    }else{
+        return arrOne.map((oneKey, i) => ({ oneKey, twoKey: arrTwo[i] }))
+    }
+}
