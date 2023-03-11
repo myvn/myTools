@@ -80,3 +80,13 @@ export const arrTwoToArrObj = (arrOne, arrTwo, oneKey, twoKey) => {
 export const arrObjSum = (obj) => {
     return obj.reduce((prev, cur) => prev + cur.key, 0)
 }
+
+
+/**
+ * 数组合并,目前合并一维
+ * @param {Array} arrOne 数组
+ * @param {Array} arrTwo 数组
+ */
+export const arrConcat = (arrOne, arrTwo) => {
+    return [...arrOne, ...arrTwo]
+}
