@@ -37,3 +37,11 @@ export function money(v_money, need_dot) {
         return "";
     }
 };
+/**
+ * 数组并集,只支持一维数组
+ * @param {Array} arrOne
+ * @param {Array} arrTwo
+ */
+export const arrAndSet = (arrOne, arrTwo) => {
+    return arrOne.concat(arrTwo.filter(v => !arrOne.includes(v)))
+}
