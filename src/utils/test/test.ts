@@ -99,3 +99,11 @@ export const arrConcat = (arrOne, arrTwo) => {
 export const arrIncludeValue = (arr,  value) => {
     return arr.includes( value)
 }
+
+/**
+ * 数组去重
+ * @param {Array} arr  数组
+ */
+export const arrRemoveRepeat = arr => {
+    return Array.from(new Set(arr))
+}
