@@ -302,3 +302,17 @@ const clone = parent => {
     }
     return _clone(parent)
 }
+
+/**
+ * sessionStorage 存贮某一段时间失效
+ * @param {String} key  属性
+ * @param {*} value 存贮值
+ * @param {String} expire 过期时间,毫秒数
+ */
+export const sessionStorageSetExpire = (key, value, expire) => {
+    if (typeof (value) === 'object') value = JSON.stringify(value)
+    sessionStorage.setItem(key, value)
+    setTimeout(() => {
+        sessionStorage.removeItem(key)
+    }, expire)
+}
