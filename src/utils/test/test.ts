@@ -193,3 +193,27 @@ export const fileFormatSize = size => {
     }
     return (Math.round(size * 100) / 100 || 0) + unit[i]
 }
+
+/**
+ * 判断两个对象是否相等,目前只支持对象值为简单数据类型的判断
+ * @param {Object} oneObj  对象
+ * @param {Object} twoObj 对象
+ */
+export const objIsEqual = (oneObj, twoObj) => {
+    const aProps = Object.getOwnPropertyNames(oneObj);
+    const bProps = Object.getOwnPropertyNames(twoObj);
+
+    if (aProps.length != bProps.length) {
+        return false;
+    }
+
+    for (let i = 0; i < aProps.length; i++) {
+        let propName = aProps[i];
+        let propA = oneObj[propName];
+        let propB = twoObj[propName];
+        if ( propA !== propB) {
+            return false;
+        }
+    }
+    return true;
+}
