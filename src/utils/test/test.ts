@@ -168,3 +168,16 @@ export const checkIosAndroidIpad = () => {
     }
     return Object.keys(obj)[Object.values(obj).indexOf(true)]
 };
+/**
+ * 判断是否是微信,qq 或 uc
+ */
+export const checkWeixinQqUc = () => {
+
+    const u = navigator.userAgent;
+    const obj = {
+        weixin: u.indexOf("MicroMessenger") > -1, //是否微信
+        qq: u.match(/QQ/i) == "qq"&&!u.indexOf('MQQBrowser') > -1, //是否QQ
+        uc: u.indexOf('UCBrowser') > -1
+    }
+    return Object.keys(obj)[Object.values(obj).indexOf(true)]
+};
