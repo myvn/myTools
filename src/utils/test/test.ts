@@ -176,8 +176,20 @@ export const checkWeixinQqUc = () => {
     const u = navigator.userAgent;
     const obj = {
         weixin: u.indexOf("MicroMessenger") > -1, //是否微信
-        qq: u.match(/QQ/i) == "qq"&&!u.indexOf('MQQBrowser') > -1, //是否QQ
+        // qq: u.match(/QQ/i) == "qq"&&!u.indexOf('MQQBrowser') > -1, //是否QQ
         uc: u.indexOf('UCBrowser') > -1
     }
     return Object.keys(obj)[Object.values(obj).indexOf(true)]
 };
+/**
+ * 格式化文件单位
+ * @param {String || Number} size  文件大小(kb)
+ */
+export const fileFormatSize = size => {
+    var i
+    var unit = ['B', 'KB', 'MB', 'GB', 'TB', 'PB']
+    for (i = 0; i < unit.length && size >= 1024; i++) {
+        size /= 1024
+    }
+    return (Math.round(size * 100) / 100 || 0) + unit[i]
+}
