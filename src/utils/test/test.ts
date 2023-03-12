@@ -63,12 +63,12 @@ export const arrIntersection = (arrOne, arrTwo) => {
  * @param {twoKey} twoKey
  */
 export const arrTwoToArrObj = (arrOne, arrTwo, oneKey, twoKey) => {
-    if(!oneKey&&!twoKey){
-        return arrOne.map((oneKey, i) => ({ [oneKey]:arrTwo[i] }))
+    if (!oneKey && !twoKey) {
+        return arrOne.map((oneKey, i) => ({[oneKey]: arrTwo[i]}))
         // 或者,此方法针对将 arrTwo 的索引作为 key 的情况,arrTwo 值会覆盖 arrOne
         // return Object.assign({}, arrOne, arrTwo)
-    }else{
-        return arrOne.map((oneKey, i) => ({ oneKey, twoKey: arrTwo[i] }))
+    } else {
+        return arrOne.map((oneKey, i) => ({oneKey, twoKey: arrTwo[i]}))
     }
 }
 
@@ -96,8 +96,8 @@ export const arrConcat = (arrOne, arrTwo) => {
  * @param {Array} arr 数组
  * @param {}  value 值,目前只支持 String,Number,Boolean
  */
-export const arrIncludeValue = (arr,  value) => {
-    return arr.includes( value)
+export const arrIncludeValue = (arr, value) => {
+    return arr.includes(value)
 }
 
 /**
@@ -113,7 +113,7 @@ export const arrRemoveRepeat = arr => {
  * @param {Array} arr  数组
  * @param {Boolean} ascendFlag   升序,默认为 true
  */
-export const arrOrderAscend = (arr, ascendFlag=true) => {
+export const arrOrderAscend = (arr, ascendFlag = true) => {
     return arr.sort((a, b) => {
         return ascendFlag ? a - b : b - a
     })
@@ -135,4 +135,10 @@ export const checkEmail = data => {
 export const checkTelPhone = data => {
     const reg = /^((\+|00)86)?1[3-9]\d{9}$/g
     if (reg.test(data)) return true
+}
+
+export function rnp() {
+    return new Promise((resolve) => {
+        resolve(1)
+    })
 }
