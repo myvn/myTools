@@ -225,30 +225,6 @@ export const objIsEqual = (oneObj, twoObj) => {
  * 对象有循环引用,会报错
  * @param {Object}  obj 克隆的对象
  */
-export const objDeepClone = obj => {
-    return clone(obj)
-}
-
-const isType = (obj, type) => {
-    if (typeof obj !== 'object') return false;
-    // 判断数据类型的经典方法：
-    const typeString = Object.prototype.toString.call(obj);
-    let flag;
-    switch (type) {
-        case 'Array':
-            flag = typeString === '[object Array]';
-            break;
-        case 'Date':
-            flag = typeString === '[object Date]';
-            break;
-        case 'RegExp':
-            flag = typeString === '[object RegExp]';
-            break;
-        default:
-            flag = false;
-    }
-    return flag;
-};
 
 
 /**
@@ -258,6 +234,13 @@ const isType = (obj, type) => {
  * @param {String} expire 过期时间,毫秒数
  */
 export const sessionStorageSetExpire = (key, value, expire) => {
+    if (typeof (value) === 'object') value = JSON.stringify(value)
+    sessionStorage.setItem(key, value)
+    setTimeout(() => {
+        sessionStorage.removeItem(key)
+    }, expire)
+}
+export const sessionStorageSetExpire1 = (key, value, expire) => {
     if (typeof (value) === 'object') value = JSON.stringify(value)
     sessionStorage.setItem(key, value)
     setTimeout(() => {
