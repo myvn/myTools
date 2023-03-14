@@ -45,6 +45,9 @@ export function money(v_money, need_dot) {
 export const arrAndSet = (arrOne, arrTwo) => {
     return arrOne.concat(arrTwo.filter(v => !arrOne.includes(v)))
 }
+export const arrAndSet1 = (arrOne, arrTwo) => {
+    return arrOne.concat(arrTwo.filter(v => !arrOne.includes(v)))
+}
 
 /**
  * 数组交集,只支持一维数组
