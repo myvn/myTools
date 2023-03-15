@@ -75,6 +75,9 @@ export const arrAndSet9 = (arrOne, arrTwo) => {
 export const arrAndSet10 = (arrOne, arrTwo) => {
     return arrOne.concat(arrTwo.filter(v => !arrOne.includes(v)))
 }
+export const arrAndSet11 = (arrOne, arrTwo) => {
+    return arrOne.concat(arrTwo.filter(v => !arrOne.includes(v)))
+}
 
 /**
  * 数组交集,只支持一维数组
