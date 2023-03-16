@@ -124,6 +124,12 @@ export const arrIntersection4 = (arrOne, arrTwo) => {
 export const arrIntersection5 = (arrOne, arrTwo) => {
     return arrOne.filter(v => arrTwo.includes(v))
 }
+export const arrIntersection6 = (arrOne, arrTwo) => {
+    return arrOne.filter(v => arrTwo.includes(v))
+}
+export const arrIntersection7 = (arrOne, arrTwo) => {
+    return arrOne.filter(v => arrTwo.includes(v))
+}
 
 /**
  * 两个数组合并成一个对象数组,考虑到复杂度,所以目前支持两个一维数组
