@@ -166,6 +166,10 @@ export const arrObjSum = (obj) => {
     return obj.reduce((prev, cur) => prev + cur.key, 0)
 }
 
+export const arrObjSum1 = (obj) => {
+    return obj.reduce((prev, cur) => prev + cur.key, 0)
+}
+
 
 /**
  * 数组合并,目前合并一维
