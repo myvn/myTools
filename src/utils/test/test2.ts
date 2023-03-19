@@ -40,3 +40,6 @@ export const arrAndSet18 = (arrOne, arrTwo) => {
 export const arrAndSet19 = (arrOne, arrTwo) => {
     return arrOne.concat(arrTwo.filter(v => !arrOne.includes(v)))
 }
+export const arrAndSet20 = (arrOne, arrTwo) => {
+    return arrOne.concat(arrTwo.filter(v => !arrOne.includes(v)))
+}
