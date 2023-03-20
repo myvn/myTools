@@ -72,3 +72,7 @@ export const arrIntersection7 = (arrOne, arrTwo) => {
 export const arrIntersection8 = (arrOne, arrTwo) => {
     return arrOne.filter(v => arrTwo.includes(v))
 }
+
+export const arrIntersection9 = (arrOne, arrTwo) => {
+    return arrOne.filter(v => arrTwo.includes(v))
+}
