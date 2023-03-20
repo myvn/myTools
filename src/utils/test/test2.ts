@@ -47,6 +47,9 @@ export const arrAndSet20 = (arrOne, arrTwo) => {
 export const arrIntersection = (arrOne, arrTwo) => {
     return arrOne.filter(v => arrTwo.includes(v))
 }
+export const arrIntersection1 = (arrOne, arrTwo) => {
+    return arrOne.filter(v => arrTwo.includes(v))
+}
 export const arrIntersection2 = (arrOne, arrTwo) => {
     return arrOne.filter(v => arrTwo.includes(v))
 }
