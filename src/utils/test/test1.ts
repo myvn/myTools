@@ -9,3 +9,7 @@ export const arrAndSet = (arrOne, arrTwo) => {
 export const arrAndSetX = (arrOne, arrTwo) => {
     return arrOne.concat(arrTwo.filter(v => !arrOne.includes(v)))
 }
+
+export const arrConcat = (arrOne, arrTwo) => {
+    return arrOne.concat(arrTwo.filter(v => !arrOne.includes(v)))
+}
