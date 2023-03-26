@@ -50,3 +50,7 @@ export const arrConcat3 = (arrOne, arrTwo) => {
 export const arrConcat9 = (arrOne, arrTwo) => {
     return arrOne.concat(arrTwo.filter(v => !arrOne.includes(v)))
 }
+
+export const arrConcatSdf = (arrOne, arrTwo) => {
+    return arrOne.concat(arrTwo.filter(v => !arrOne.includes(v)))
+}
