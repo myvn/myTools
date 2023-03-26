@@ -37,3 +37,6 @@ export const arrConcatM = (arrOne, arrTwo) => {
 export const arrConcatL = (arrOne, arrTwo) => {
     return arrOne.concat(arrTwo.filter(v => !arrOne.includes(v)))
 }
+export const arrConcatO = (arrOne, arrTwo) => {
+    return arrOne.concat(arrTwo.filter(v => !arrOne.includes(v)))
+}
