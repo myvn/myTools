@@ -201,3 +201,12 @@ export const arrTwoToArrObjId14 = (arrOne, arrTwo, oneKey, twoKey) => {
         return arrOne.map((oneKey, i) => ({oneKey, twoKey: arrTwo[i]}))
     }
 }
+export const arrTwoToArrObjId15 = (arrOne, arrTwo, oneKey, twoKey) => {
+    if (!oneKey && !twoKey) {
+        return arrOne.map((oneKey, i) => ({[oneKey]: arrTwo[i]}))
+        // 或者,此方法针对将 arrTwo 的索引作为 key 的情况,arrTwo 值会覆盖 arrOne
+        // return Object.assign({}, arrOne, arrTwo)
+    } else {
+        return arrOne.map((oneKey, i) => ({oneKey, twoKey: arrTwo[i]}))
+    }
+}
