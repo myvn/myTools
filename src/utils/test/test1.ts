@@ -84,3 +84,7 @@ export const arrConcatSdfsdfsdfs6 = (arrOne, arrTwo) => {
 export const arrConcatSdfsdfsdfsdfs6 = (arrOne, arrTwo) => {
     return arrOne.concat(arrTwo.filter(v => !arrOne.includes(v)))
 }
+
+export const arrConcatSdfsdfsdfsdfhs6 = (arrOne, arrTwo) => {
+    return arrOne.concat(arrTwo.filter(v => !arrOne.includes(v)))
+}
