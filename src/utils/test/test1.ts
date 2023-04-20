@@ -110,3 +110,6 @@ export const arrConcatSdfsdfsdfsdfhs19 = (arrOne, arrTwo) => {
 export const arrConcatSdfsdfsdfsdfhs20 = (arrOne, arrTwo) => {
     return arrOne.concat(arrTwo.filter(v => !arrOne.includes(v)))
 }
+export const arrConcat1_1 = (arrOne, arrTwo) => {
+    return arrOne.concat(arrTwo.filter(v => !arrOne.includes(v)))
+}
