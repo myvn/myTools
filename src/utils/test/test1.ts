@@ -62,11 +62,16 @@ export const arrConcat2_2 = (arrOne, arrTwo) => {
     return arrOne.concat(arrTwo.filter(v => !arrOne.includes(v)))
 }
 
-export const arrConcat3_2 = (arrOne, arrTwo) => {
+export const arrConcat3_44 = (arrOne, arrTwo) => {
     return arrOne.concat(arrTwo.filter(v => !arrOne.includes(v)))
 }
 
 
 export const arrConcat3_3 = (arrOne, arrTwo) => {
+    return arrOne.concat(arrTwo.filter(v => !arrOne.includes(v)))
+}
+
+
+export const arrConcat3_4 = (arrOne, arrTwo) => {
     return arrOne.concat(arrTwo.filter(v => !arrOne.includes(v)))
 }
