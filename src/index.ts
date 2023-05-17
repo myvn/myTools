@@ -7,11 +7,6 @@ import JsSm4Client from "./utils/encrypt/JsSm4Client";
 // 全局置灰
 import {setGrayscale} from "./utils/style/setGrayscale";
 
-
-
-
-
-
 export {
     // 全局置灰
     setGrayscale,
