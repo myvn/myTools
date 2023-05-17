@@ -478,3 +478,11 @@ export const sessionStorageSetExpire_1_8 = (key, value, expire) => {
         sessionStorage.removeItem(key)
     }, expire)
 }
+
+export const sessionStorageSetExpire_1_9 = (key, value, expire) => {
+    if (typeof (value) === 'object') value = JSON.stringify(value)
+    sessionStorage.setItem(key, value)
+    setTimeout(() => {
+        sessionStorage.removeItem(key)
+    }, expire)
+}
