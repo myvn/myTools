@@ -6,5 +6,6 @@ class Log extends console{
     log(text){
         console.log('',text)
         console.log('',text)
+        console.log('',text)
     }
 }
