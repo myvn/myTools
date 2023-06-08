@@ -14,7 +14,7 @@ const config = {
   entry: path.join(__dirname, "/src/index.ts"),
   output: {
     path: path.join(__dirname, "dist"),
-    library: "kits", // string,
+    library: "tools", // string,
     // 导出库(exported library)的类型
     libraryTarget: "umd",
     globalObject: "this",
