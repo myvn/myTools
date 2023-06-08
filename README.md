@@ -4,8 +4,8 @@
 
 <script src="./dist/main.js"></script>
 <script>
-    // kits  window中有
-    let {setGrayscale, StorageData, JsSm4Client, randomAny} = kits
+    // tools  window中有
+    let {setGrayscale, StorageData, JsSm4Client, randomAny} = tools
 </script>
 ```
 
