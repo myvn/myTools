@@ -24,7 +24,8 @@
       "es2015"
     ],
     "jsx": "react",
-    "allowJs": false
+    "allowJs": false,
+    "allowSyntheticDefaultImports": true
   },
   "include": [
     "src/**/*.ts",
