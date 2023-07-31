@@ -1,7 +1,7 @@
 {
-  "version": "1.0.8",
-  "description": "my-tools-ts",
-  "name": "my-tools-ts",
+  "version": "1.0.1",
+  "description": "my-random-any",
+  "name": "my-random-any",
   "main": "./dist/main.js",
   "types": "./dist/types/index.d.ts",
   "files": [
@@ -15,34 +15,26 @@
     "serve": "webpack serve"
   },
   "keywords": [
-    "randomAny",
-    "StorageData",
-    "JsSm4Client"
+    "randomAny"
   ],
   "author": "ahrimansource",
   "devDependencies": {
+    "@babel/core": "^7.21.0",
     "@types/node": "^18.14.3",
     "@webpack-cli/generators": "^3.0.1",
     "ajv": "^7",
-    "autoprefixer": "^10.4.12",
-    "css-loader": "^6.7.1",
     "clean-webpack-plugin": "^4.0.0",
     "html-webpack-plugin": "^5.5.0",
-    "jssm4": "^1.0.3",
-    "mini-css-extract-plugin": "^2.6.1",
-    "postcss": "^8.4.18",
-    "postcss-loader": "^7.0.1",
+    "node-polyfill-webpack-plugin": "^2.0.1",
     "prettier": "^2.7.1",
-    "sass": "^1.55.0",
-    "sass-loader": "^13.1.0",
-    "style-loader": "^3.3.1",
-    "ts-loader": "^9.4.1",
+    "thread-loader": "^3.0.4",
+    "ts-loader": "^4.5.0",
     "typescript": "^4.8.4",
     "webpack": "^5.74.0",
-    "webpack-cli": "^4.10.0",
+    "webpack-cli": "^5.0.1",
     "webpack-dev-server": "^4.11.1",
+    "webpack-node-externals": "^3.0.0",
     "workbox-webpack-plugin": "^6.5.4"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }
