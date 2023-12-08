@@ -9,6 +9,9 @@ class Log extends console{
     setLog(log){
         return log
     }
+    detLog(log){
+        return log
+    }
     log(text){
         console.log('',text)
         console.log('',text)
