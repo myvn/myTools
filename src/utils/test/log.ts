@@ -18,4 +18,9 @@ class Log extends console{
             resolve(text)
         });
     }
+    maYang(){
+        return new Promise((reject) => {
+            reject(1)
+        });
+    }
 }
