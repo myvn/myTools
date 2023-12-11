@@ -13,20 +13,9 @@ class Log extends console{
         return log
     }
     log(text){
-        console.log('',text)
-        console.log('',text)
-        console.log('',text)
-        console.log('',text)
-        console.log('',text)
-        console.log('',text)
-        console.log('',text)
-        console.log('',text)
-        console.log('',text)
-        console.log('',text)
-        console.log('',text)
-        console.log('',text)
-        console.log('',text)
-        console.log('',text)
-        console.log('',text)
+        console.log(text);
+        return new Promise((resolve) => {
+            resolve(text)
+        });
     }
 }
