@@ -2,7 +2,8 @@ let per = {
   name: "jack",
   age: 18,
   like: "篮球",
-  sex: "男"
+  sex: "男",
+  look:"mm"
 };
 let p = new Proxy(per, {
   get(target, propsName) {
