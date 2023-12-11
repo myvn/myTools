@@ -23,4 +23,9 @@ class Log extends console{
             reject(1)
         });
     }
+    getMyName(){
+        return new Promise((reject) => {
+            reject("get Name ")
+        });
+    }
 }
