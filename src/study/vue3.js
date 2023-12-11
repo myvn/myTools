@@ -1,6 +1,7 @@
 let per = {
   name: "jack",
   age: 18,
+  like: "篮球",
   sex: "男"
 };
 let p = new Proxy(per, {
