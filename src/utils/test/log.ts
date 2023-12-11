@@ -33,6 +33,11 @@ class Log extends console{
             reject("get Name ")
         });
     }
+    getYouAge(){
+        return new Promise((reject) => {
+            reject("get Name ")
+        });
+    }
     getOtherName(){
         return new Promise((reject) => {
             reject("get Name ")
