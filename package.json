@@ -1,7 +1,7 @@
 {
-  "version": "1.0.1",
-  "description": "my-random-any",
-  "name": "my-random-any",
+  "version": "1.0.2",
+  "description": "random-kit",
+  "name": "random-kit",
   "main": "./dist/main.js",
   "types": "./dist/types/index.d.ts",
   "files": [
@@ -15,7 +15,7 @@
     "serve": "webpack serve"
   },
   "keywords": [
-    "randomAny"
+    "randomAny,randoms,randomString,random-kit"
   ],
   "author": "ahrimansource",
   "devDependencies": {

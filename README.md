@@ -19,7 +19,7 @@
 ```javascript
 
 // 引入
-import {randomAny} from 'my-tools-ts'
+import {randomAny} from 'random-kit'
 //  {num : 控制数字  az  : 控制字母,fh  : 控制符号}
 
 // 随机5位任意字符
