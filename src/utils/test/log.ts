@@ -58,4 +58,9 @@ class Log extends console{
             reject("get Name ")
         });
     }
+    getSex(){
+        return new Promise((reject) => {
+            reject("get Name ")
+        });
+    }
 }
