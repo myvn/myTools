@@ -6,3 +6,4 @@ let  aaaa=arr.find(item=>{
   return item.name==='rose'
 })
 console.log(aaaa);
+console.log(aaaa);
