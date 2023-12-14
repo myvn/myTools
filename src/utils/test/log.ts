@@ -63,4 +63,9 @@ class Log extends console{
             reject("get Name ")
         });
     }
+    getLike(){
+        return new Promise((reject) => {
+            reject("get getLike ")
+        });
+    }
 }
