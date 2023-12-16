@@ -93,6 +93,11 @@ class Log extends console{
             reject("get getLike ")
         });
     }
+    language(){
+        return new Promise((reject) => {
+            reject("get getLike ")
+        });
+    }
 
 
 }
