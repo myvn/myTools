@@ -63,6 +63,11 @@ class Log extends console{
             reject("get Name ")
         });
     }
+    getMather(){
+        return new Promise((reject) => {
+            reject("get Name ")
+        });
+    }
     getFather(){
         return new Promise((reject) => {
             reject("get Name ")
