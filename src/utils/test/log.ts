@@ -88,6 +88,11 @@ class Log extends console{
             reject("get getLike ")
         });
     }
+    harmonious(){
+        return new Promise((reject) => {
+            reject("get getLike ")
+        });
+    }
 
 
 }
