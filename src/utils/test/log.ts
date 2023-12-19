@@ -160,5 +160,8 @@ class Log extends console {
   readyData() {
     return 1;
   }
+  readyDataInit() {
+    return this.readyData();
+  }
 
 }
