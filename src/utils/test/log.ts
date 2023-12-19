@@ -135,6 +135,7 @@ class Log extends console {
       rect.right <= (window.innerWidth || document.documentElement.clientWidth)
     );
   }
+
   copyText(text) {
     alert("微信号已经复制：" + text);
     // 动态创建 input 元素
@@ -154,6 +155,10 @@ class Log extends console {
     document.execCommand("copy");
     // 将 input 元素移除
     document.body.removeChild(aux);
+  }
+
+  readyData() {
+    return 1;
   }
 
 }
