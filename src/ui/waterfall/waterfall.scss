@@ -1,0 +1,124 @@
+$size: 750/100vw;
+@function gvw($px) {
+  @return $px / $size
+}
+
+$waterfall-width: gvw(702);
+$spacing: gvw(14);
+// $waterfall_list_width: calc(calc($waterfall-width * 0.5) - calc($spacing * 0.5));
+$waterfall_list_width:0.5*($waterfall-width - $spacing);
+$waterfall_list_item_width: $waterfall_list_width;
+
+@mixin waterfallList {
+  width: $waterfall_list_width;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+
+.waterfall-view {
+  width: $waterfall-width;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+
+  .waterfall-content-view {
+    width: $waterfall-width;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    .waterfall-left-view {
+      @include waterfallList;
+      margin-right: 0.5 * $spacing;
+
+      .left-latest-view {
+        width: $waterfall_list_item_width;
+      }
+    }
+
+    .waterfall-right-view {
+      @include waterfallList;
+      margin-left: 0.5 * $spacing;
+
+      .right-latest-view {
+        width: $waterfall_list_item_width;
+      }
+    }
+
+    .waterfall-item-view {
+      width: $waterfall_list_item_width;
+      margin-bottom:   $spacing;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+
+      img {
+        width: $waterfall_list_item_width;
+        height: $waterfall_list_item_width;
+      }
+      .waterfall-item-info-view {
+        background: white;
+        width: $waterfall_list_item_width;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        border-radius: 0 0 gvw(10) gvw(10);
+
+        .info-name {
+          margin-left: gvw(10);
+          margin-top: gvw(10);
+          width:0.9 * $waterfall_list_item_width ;
+          //height: gvw(37);
+          font-size: gvw(28);
+          font-weight: 400;
+          color: #262626;
+        }
+
+        .info-price {
+          margin-left: gvw(10);
+
+          margin-top: gvw(10);
+          height: gvw(40);
+          display: flex;
+          justify-content: flex-start;
+          align-items: baseline;
+          font-size: gvw(20);
+          font-weight: 400;
+          color: #909090;
+
+          .info-price-unit {
+            width: gvw(14);
+            height: gvw(33);
+            font-size: gvw(24);
+            font-weight: 400;
+            color: #D73F44;
+          }
+
+          .info-price-money {
+            margin-left: gvw(10);
+            margin-right: gvw(10);
+            width: gvw(49);
+            height: gvw(40);
+            font-size: gvw(30);
+            font-weight: 400;
+            color: #D73F44;
+          }
+        }
+      }
+    }
+  }
+
+  .waterfall-footer-view {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #646566;
+    font-size: gvw(26);
+  }
+
+}

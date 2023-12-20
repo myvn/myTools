@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="icon" type="image/x-icon" href="./favicon.ico">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta charset="UTF-8">
+    <title>至味六盘商城</title>
+    <link rel="stylesheet" href="./static/css/indexMb.css">
+    <!--swiper.css-->
+    <link rel="stylesheet" href="./lib/swiper/swiper-bundle.min.css"/>
+    <!-- vant.css -->
+    <link rel="stylesheet" href="./lib/vant/vant.css"/>
+    <!-- 引入 swiper.js -->
+    <script src="./lib/swiper/swiper-bundle.min.js"></script>
+    <!-- 引入 Vue 和 Vant 的 JS 文件 -->
+    <script src="./lib/vue/vue.min.js"></script>
+    <script src="./lib/vant/vant.min.js"></script>
+    <!--  工具类  -->
+    <script src="./static/js/utils.js"></script>
+
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+
+        .van-search__action {
+            margin-left: 2vw;
+            margin-right: 2vw;
+            padding: 0;
+            border-radius: 50%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .my-swipe .van-swipe-item {
+            color: #fff;
+            font-size: 20px;
+            line-height: 150px;
+            text-align: center;
+            background-color: #39a9ed;
+        }
+    </style>
+</head>
+
+<body>
+<div id="app" v-cloak="">
+    <div class="app-header-view" ref="appHeaderView">
+        <van-search v-model="searchKey" background="transparent" show-action @focus="footerData.show=false"
+                    @blur="footerData.show=true" shape="round" placeholder="请输入搜索关键词" @search="onSearch"
+                    @cancel="onCancel">
+            <template #action>
+                <van-button v-if="searchKey" size="small" round type="info" @click="onSearch">搜索</van-button>
+            </template>
+        </van-search>
+
+
+    </div>
+
+    <div class="app-content-view">
+        <!--轮播-->
+        <div class="swiper-view">
+            <div class="vant-swiper-view">
+                <van-swipe class="my-vant-swiper" :duration="1500" :autoplay="3000">
+                    <van-swipe-item class="my-vant-swipe-item" v-for="(image, index) in bannerData" :key="index">
+                        <img :src="image.img"/>
+                    </van-swipe-item>
+                </van-swipe>
+                <!-- Swiper -->
+                <!-- <div class="swiper-wrapper">
+                    <div class="swiper-slide venuesSlide" v-for="bannerItem in bannerData">
+                        <div class="venuesSlideItemView">
+                                <img src="./static/image/app/app-swiper-img.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div> -->
+
+            </div>
+        </div>
+        <!--模块集合-->
+        <div class="module-view">
+            <!--今日快讯-->
+            <div class="today-news-view">
+                <img src="./static/image/app/app-today-news.png" alt="" class="news-icon">
+                <div class="scroll-text-view ellipsis1">
+                    本地现摘超大个草莓，个头饱满，香甜细腻只需本地现摘超大个草莓，个头饱满，香甜细腻只需
+                </div>
+            </div>
+
+            <!--gridview1-->
+            <div class="grid-view-1">
+                <div class="grid1-item-view" v-for="gridItem in grid1Data">
+                    <img :src="gridItem.img" alt="">
+                    <div class="item-text-view">
+                        {{gridItem.name}}
+                    </div>
+                </div>
+            </div>
+
+            <!--广告-->
+            <div class="adv-view">
+                <img :src="advImg" alt="">
+            </div>
+
+            <!-- 四县专区-->
+            <div class="counties-area-view">
+                <!-- 头部 -->
+                <div class="module-header-view">
+                    <div class="module-left">
+                        <img src="./static/image/app/app-module-icon.png" alt="" class="module-icon">
+                        <div class="module-name">四县专区</div>
+                    </div>
+                </div>
+                <!--   内容   -->
+                <div class="counties-area-content-view">
+                    <!-- Swiper -->
+                    <div class="swiper mySwiper1">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide mySwiper1-slide" v-for="(bannerItem,index) in bannerData2">
+                                <img :src="bannerItem.img" alt="">
+                                <div class="slide-item-text-view">{{bannerItem.name}}{{index}}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 热门产品-->
+            <div class="hot-product-view">
+                <div class="module-header-view">
+                    <div class="module-left">
+                        <img src="./static/image/app/app-module-icon.png" alt="" class="module-icon">
+                        <div class="module-name">热门产品</div>
+                    </div>
+                    <div class="module-right">
+                        <div class="module-more">更多
+                            <van-icon color="#292929" name="arrow"></van-icon>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="hot-product-gird-view">
+                    <div class="hot-p-grid-item-view" v-for="productItem in  hotProductData">
+                        <img :src="productItem.img" alt="">
+                        <div class="product-info-view">
+                            <div class="product-name ellipsis1">{{productItem.name}}</div>
+                            <div class="product-price">
+                                <span class="price-unit">￥</span>
+                                <span class="price-money">333</span>
+                                起
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <!--tab -->
+            <div class="tabs-view">
+                <div class="tabs-header-view">
+
+                    <!-- @click="tabsClick"  -->
+                    <van-tabs
+                            sticky
+                            :ellipsis="false"
+                            :offset-top="tabsData.offsetTop+'px'"
+                            v-model="tabsData.index"
+                            :before-change="beforeChange">
+                        <van-tab v-for="tabItem in tabsData.tabList">
+                            <template #title>
+                                <div style="display: flex;justify-content: center;align-items: center">
+                                    {{tabItem.name}}
+                                    <van-loading :style="{visibility: tabItem.waterfallData.loading?'visible':'hidden'}" size="18"/>
+                                </div>
+                            </template>
+                            <!--瀑布流-->
+
+                            <div class="waterfall-view">
+                                <div class="waterfall-content-view">
+                                    <div class="waterfall-left-view" v-if="tabItem.waterfallData.leftData.length!==0">
+                                        <template v-for="(leftItem,index) in tabItem.waterfallData.leftData">
+                                            <div class="waterfall-item-view">
+                                                <img :src="leftItem.img" alt="">
+                                                <div class="waterfall-item-info-view">
+                                                    <div class="info-name ">
+                                                        {{index}}-{{tabItem.waterfallData.leftData.length}}-
+                                                        {{leftItem.type}}
+                                                        {{index % 2 === 0 ? '烦死了快递费极乐世界发啦' : '烦死了快递费极乐世界发啦烦死了快递费极乐世界发啦'}}
+                                                    </div>
+                                                    <div class="info-price">
+                                                        <span class="info-price-unit">￥</span>
+                                                        <span class="info-price-money">333</span>
+                                                        起
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <template v-if="index===tabItem.waterfallData.leftData.length-1">
+                                                <div class="left-latest-view"
+                                                     :id="tabItem.waterfallData.leftLatestViewId">
+                                                </div>
+                                            </template>
+
+                                        </template>
+
+                                    </div>
+                                    <div class="waterfall-right-view" v-if="tabItem.waterfallData.rightData.length!==0">
+                                        <template v-for="(rightItem,index) in tabItem.waterfallData.rightData">
+                                            <div class="waterfall-item-view">
+                                                <img :src="rightItem.img" alt="">
+                                                <div class="waterfall-item-info-view">
+                                                    <div class="info-name van-multi-ellipsis--l2">
+                                                        {{index}}-{{tabItem.waterfallData.rightData.length}}-
+                                                        {{rightItem.type}}烦死了快递费极乐世界发啦
+                                                    </div>
+                                                    <div class="info-price">
+                                                        <span class="info-price-unit">￥</span>
+                                                        <span class="info-price-money">333</span>
+                                                        起
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <template v-if="index===tabItem.waterfallData.rightData.length-1">
+                                                <div class="right-latest-view"
+                                                     :id="tabItem.waterfallData.rightLatestViewId">
+
+                                                </div>
+                                            </template>
+
+                                        </template>
+
+
+                                    </div>
+                                </div>
+                                <div class="waterfall-footer-view" id="waterfall-footer-view">
+                                    <template v-if="tabItem.waterfallData.dataFinished">
+                                        ^o^ 已经到底了 ...
+                                    </template>
+                                    <template v-else>
+                                        <van-loading v-if="tabItem.waterfallData.loading">加载中...</van-loading>
+                                    </template>
+                                </div>
+                            </div>
+                        </van-tab>
+                    </van-tabs>
+                </div>
+                <div class="tabs-content-view" v-if="false">
+                    <!--瀑布流-->
+                    <div class="waterfall-view">
+                        <div class="waterfall-content-view">
+                            <div class="waterfall-left-view" v-if="waterfallData.leftData.length!==0">
+                                <template v-for="(leftItem,index) in waterfallData.leftData">
+                                    <div class="waterfall-item-view">
+                                        <img :src="leftItem.img" alt="">
+                                        <div class="waterfall-item-info-view">
+                                            <div class="info-name ">
+                                                {{index % 2 === 0 ? '烦死了快递费极乐世界发啦' : '烦死了快递费极乐世界发啦烦死了快递费极乐世界发啦'}}
+                                            </div>
+                                            <div class="info-price">
+                                                <span class="info-price-unit">￥</span>
+                                                <span class="info-price-money">333</span>
+                                                起
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <template v-if="index===waterfallData.leftData.length-2">
+                                        <div class="left-latest-view" :id="waterfallData.leftLatestViewId">
+
+                                            <!--                                            left-latest-view-->
+                                        </div>
+                                    </template>
+
+                                </template>
+
+                            </div>
+                            <div class="waterfall-right-view" v-if="waterfallData.rightData.length!==0">
+                                <template v-for="(rightItem,index) in waterfallData.rightData">
+                                    <div class="waterfall-item-view">
+                                        <img :src="rightItem.img" alt="">
+                                        <div class="waterfall-item-info-view">
+                                            <div class="info-name van-multi-ellipsis--l2">烦死了快递费极乐世界发啦</div>
+                                            <div class="info-price">
+                                                <span class="info-price-unit">￥</span>
+                                                <span class="info-price-money">333</span>
+                                                起
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <template v-if="index===waterfallData.rightData.length-2">
+                                        <div class="right-latest-view" :id="waterfallData.rightLatestViewId">
+                                            <!--                                            right-latest-view-->
+                                        </div>
+                                    </template>
+
+                                </template>
+
+
+                            </div>
+                        </div>
+                        <div class="waterfall-footer-view">
+                            <template v-if="waterfallData.dataFinished">
+                                没有更多数据了
+                            </template>
+                            <template v-else>
+                                <van-loading v-if="waterfallData.loading">加载中...</van-loading>
+                            </template>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+    <div class="app-footer-view" v-if="footerData.show">
+        <div class="footer-content-view">
+            <div class="footer-item-view" v-for="(footerItem,index) in footerData.list"
+                 @click="footerClick(footerItem,index)">
+                <img :src="footerData.active===index?footerItem.iconed:footerItem.icon" alt="">
+                <div class="name-view" :class="[footerData.active===index?'name-active':'']">{{footerItem.name}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <van-dialog class="dialog-view" @closed="dialogClose" v-model="dialogData.show"
+                :cancel-button-text="'关闭'"
+                :title="dialogData.title"
+                :show-confirm-button="false"
+                :show-cancel-button="true">
+
+        <div class="dialog-content-view">
+            <img :src="dialogData.qrCode" alt=""
+                 class="qrcode-view">
+            <div class="info-item-view " @click="copyText(dialogData.wx)">
+                <div>微信号：{{dialogData.wx}}</div>
+                <van-icon name="star"/>
+            </div>
+            <div class="info-item-view ">
+                <a :href="'tel:'+dialogData.phone">联系电话 ：{{dialogData.phone}}</a>
+                <van-icon name="phone"/>
+            </div>
+        </div>
+    </van-dialog>
+</div>
+
+<script>
+    window.onload = function () {
+        new Vue({
+            el: "#app",
+            data: {
+                dialogData: {
+                    show: false,
+                    title: "丝路客服",
+                    qrCode: './static/image/app/app-dialog-qrcode.jpg',
+                    wx: 'ttkf528',
+                    phone: '0951-5100000'
+                },
+                // 搜索
+                searchKey: '',
+                // 轮播
+                bannerData: [
+                    { img: './static/image/app/app-swiper-img.png', url: '' },
+                    { img: './static/image/app/app-swiper-img.png', url: '' },
+                    { img: './static/image/app/app-swiper-img.png', url: '' },
+                    { img: './static/image/app/app-swiper-img.png', url: '' },
+                ],
+                // 轮播
+                bannerData2: [
+                    //  原州区   彭阳县  泾源县  西吉县 隆德县
+                    { img: './static/image/app/app-swiper2-item-1.png', url: '', name: '原州区' },
+                    { img: './static/image/app/app-swiper2-item-2.png', url: '', name: '彭阳县' },
+                    { img: './static/image/app/app-swiper-img.png', url: '', name: '泾源县' },
+                    { img: './static/image/app/app-adv-img.png', url: '', name: '西吉县' },
+                    { img: './static/image/app/app-product-item-1.png', url: '', name: '隆德县' }
+                ],
+                //  grid1Data
+                grid1Data: [
+                    { img: './static/image/app/app-grid1-item-1.png', url: '', name: '米面粮油' },
+                    { img: './static/image/app/app-grid1-item-2.png', url: '', name: '酒水饮料' },
+                    { img: './static/image/app/app-grid1-item-3.png', url: '', name: '养生茶品' },
+                    { img: './static/image/app/app-grid1-item-4.png', url: '', name: '优惠专区' },
+                    { img: './static/image/app/app-grid1-item-5.png', url: '', name: '全部商品' },
+
+
+                ],
+                // advImg
+                advImg: './static/image/app/app-adv-img.png',
+                // 热门产品
+                hotProductData: [
+                    { img: './static/image/app/app-product-item-1.png', url: '', name: "此奶有气气泡奶此奶有气气泡奶" },
+                    { img: './static/image/app/app-product-item-2.png', url: '', name: "此奶有气气泡奶此奶有气气泡奶" },
+                    { img: './static/image/app/app-product-item-3.png', url: '', name: "此奶有气气泡奶此奶有气气泡奶" },
+                    { img: './static/image/app/app-product-item-1.png', url: '', name: "此奶有气气泡奶此奶有气气泡奶" },
+                    { img: './static/image/app/app-product-item-2.png', url: '', name: "此奶有气气泡奶此奶有气气泡奶" },
+                    { img: './static/image/app/app-product-item-3.png', url: '', name: "此奶有气气泡奶此奶有气气泡奶" },
+
+                ],
+                tabsData: {
+                    offsetTop: 0,
+                    index: 0,
+                    tabList: [
+                        {
+                            name: "限时特惠",
+                            type: 1,
+                            waterfallData: {}
+                        },
+                        {
+                            name: "当季新品",
+                            type: 2,
+                            waterfallData: {}
+                        },
+                        {
+                            name: "小编推荐",
+                            type: 3,
+                            waterfallData: {}
+                        }
+                    ]
+                },
+                waterfallData: {
+                    leftLatestViewId: 'left-latest-view',
+                    rightLatestViewId: 'right-latest-view',
+                    dataFinished: false,
+                    loading: false,
+                    pageNum: 1,
+                    pageSize: 10,
+                    type: 1,
+                    leftData: [],
+                    rightData: [],
+                },
+                footerData: {
+                    show: true,
+                    active: 0,
+                    baseUrl: 'https://www.nxzhly.com',
+                    list: [
+                        {
+                            name: "首页",
+                            iconed: './static/image/app/app-footer-item-home-ed.png',
+                            icon: './static/image/app/app-footer-item-home.png',
+                            link: '/'
+                        },
+                        {
+                            name: "客服",
+                            iconed: './static/image/app/app-footer-item-service-ed.png',
+                            icon: './static/image/app/app-footer-item-service.png',
+                            link: ''
+                        },
+                        {
+                            name: "我的",
+                            iconed: './static/image/app/app-footer-item-my-ed.png',
+                            icon: './static/image/app/app-footer-item-my.png',
+                            link: '/customer/home'
+                        },
+                    ]
+                },
+                // 项目基础图片地址
+                imgBaseUrl: "imgPcMbUrl",
+            },
+            created() {
+                this.initTabsData()
+            },
+            mounted() {
+                this.tabsData.offsetTop = this.$refs.appHeaderView.offsetHeight
+                this.$nextTick(() => {
+                    this.initSwiper1()
+                    this.waterfallMoreData(this.tabsData.index)
+                })
+
+            },
+            methods: {
+                beforeChange(index) {
+                    return new Promise((resolve) => {
+                        // 在 resolve 函数中返回 true 或 false
+                        if (this.tabsData.tabList[this.tabsData.index].waterfallData.loading) {
+                            this.$toast('数据加载中')
+                            resolve(false);
+                        } else {
+                            this.waterfallMoreData(index)
+                            resolve(true);
+                        }
+
+                    });
+                },
+                tabsClick(index, title) {
+                    console.log("tabsClick", index, title);
+                    console.log("tabsClick", this.tabsData.index);
+                    this.waterfallMoreData(index)
+                },
+                initTabsData() {
+                    this.tabsData.tabList.forEach((item, index) => {
+                        item.waterfallData = {
+                            leftLatestViewId: `left-latest-view-${item.type}`,
+                            rightLatestViewId: `right-latest-view-${item.type}`,
+                            dataFinished: false,
+                            loading: false,
+                            cacheArr: [],
+                            pageNum: 1,
+                            pageSize: 8,
+                            type: item.type,
+                            index: index,
+                            leftData: [],
+                            rightData: [],
+                        }
+                    })
+
+                },
+                waterfallMoreData(currentIndex) {
+                    let _this = this
+                    let waterfallParams = _this.tabsData.tabList[currentIndex].waterfallData
+                    let leftLatestViewDom = document.getElementById(waterfallParams.leftLatestViewId)
+                    let rightLatestViewDom = document.getElementById(waterfallParams.rightLatestViewId)
+
+                    if (waterfallParams.leftData.length === 0 && waterfallParams.rightData.length === 0) {
+                        console.log("预备数据");
+                        // 预备数据
+                        setWaterfallData()
+                    }
+                    // 移除监听
+                    document.removeEventListener('scroll', myScroll)
+                    // 滚动监听
+                    document.addEventListener('scroll', myScroll)
+
+                    /*滚动方法*/
+                    function myScroll() {
+                        if (_this.tabsData.index !== waterfallParams.index) {
+                            return false
+                        }
+                        if (!leftLatestViewDom) {
+                            leftLatestViewDom = document.getElementById(waterfallParams.leftLatestViewId)
+                        }
+                        if (!rightLatestViewDom) {
+                            rightLatestViewDom = document.getElementById(waterfallParams.rightLatestViewId)
+                        }
+                        // 还有数据
+                        if (!waterfallParams.dataFinished) {
+                            // 请求加载结束，已经获取到数据
+                            if (!waterfallParams.loading) {
+                                if (leftLatestViewDom && rightLatestViewDom) {
+                                    if (isElementVisibleMy(leftLatestViewDom) || isElementVisibleMy(rightLatestViewDom)) {
+                                        setWaterfallData()
+                                    }
+                                }
+                            } else {
+                                console.log("加载中");
+                            }
+
+                        }
+                    }
+
+                    /**
+                     * 请求数据
+                     * @param params
+                     * @returns {Promise<unknown>}
+                     */
+                    function getNetData(params) {
+                        let maxPageNum = 6
+                        let { pageSize, pageNum, type } = params
+
+                        console.log("pageNum", pageNum);
+                        let networkData = [
+                            { img: "./static/image/app/app-waterfall-item-1.png", type },
+                            { img: "./static/image/app/app-waterfall-item-2.png", type },
+                            { img: "./static/image/app/app-grid1-item-1.png", type, },
+                            { img: "./static/image/app/app-grid1-item-2.png", type, },
+                            { img: "./static/image/app/app-grid1-item-3.png", type, },
+                            { img: "./static/image/app/app-grid1-item-4.png", type, },
+                            { img: "./static/image/app/app-grid1-item-5.png", type, },
+                            { img: "./static/image/app/app-dialog-qrcode.jpg", type, },
+                        ]
+                        // 下一页数据
+                        let nextPageData = [
+                            { img: "./static/image/app/app-waterfall-item-1.png", type },
+                            { img: "./static/image/app/app-waterfall-item-2.png", type },
+                            { img: "./static/image/app/app-grid1-item-1.png", type, },
+                            { img: "./static/image/app/app-grid1-item-2.png", type, },
+                            { img: "./static/image/app/app-grid1-item-3.png", type, },
+                            { img: "./static/image/app/app-grid1-item-4.png", type, },
+                            { img: "./static/image/app/app-grid1-item-5.png", type, },
+                            { img: "./static/image/app/app-dialog-qrcode.jpg", type, },
+
+                        ]
+                        // let ret = waterfallParams.cacheArr
+                        /*if (pageNum <= maxPageNum) {
+                            //
+                            console.log("getNetData 有数据 pageNum <= maxPageNum",pageNum <= maxPageNum);
+                            waterfallParams.cacheArr = networkData
+                            waterfallParams.dataFinished = false
+
+                        } else {
+                            console.log(" getNetData 总数据没有了",pageNum <= maxPageNum);
+                            waterfallParams.cacheArr = []
+                            waterfallParams.dataFinished = true
+                        }
+
+
+                        if (waterfallParams.cacheArr.length !== 0 && pageNum <= maxPageNum) {
+                            waterfallParams.pageNum++
+                        }*/
+
+
+                        return new Promise((resolve) => {
+                            setTimeout(() => {
+                                if (pageNum < maxPageNum) {
+                                    waterfallParams.pageNum++
+                                    waterfallParams.dataFinished = false
+                                    resolve(networkData)
+                                } else {
+                                    waterfallParams.dataFinished = true
+                                    resolve([])
+                                }
+                            }, 1600)
+                        })
+                    }
+
+                    /*
+                    * 加载数据
+                    * */
+                    function setWaterfallData() {
+                        waterfallParams.loading = true
+                        if (!waterfallParams.dataFinished) {
+                            getNetData({
+                                pageNum: waterfallParams.pageNum,
+                                pageSize: waterfallParams.pageSize,
+                                type: waterfallParams.type
+                            }).then(res => {
+                                waterfallParams.loading = false
+                                if (res.length !== 0) {
+                                    res.forEach((item, index) => {
+                                        if (index % 2 === 0) {
+                                            waterfallParams.leftData.push(item)
+                                        } else {
+                                            waterfallParams.rightData.push(item)
+                                        }
+                                    })
+                                }
+                            })
+
+                        } else {
+                            waterfallParams.loading = false
+                        }
+                    }
+
+                },
+
+
+                dialogClose() {
+
+                    this.footerData.active = localStorage.getItem('footerIndex') ? parseInt(localStorage.getItem('footerIndex')) : 0
+                },
+                copyText(text) {
+                    this.$toast("微信号已经复制：" + text);
+                    // 动态创建 input 元素
+                    let aux = document.createElement("input");
+                    // 获得需要复制的内容
+                    aux.setAttribute("value", text);
+                    // 添加到 DOM 元素中
+                    document.body.appendChild(aux);
+                    // 执行选中
+                    // 注意: 只有 input 和 textarea 可以执行 select() 方法.
+                    aux.select();
+
+                    // 获得选中的内容
+                    // var content = window.getSelection().toString();
+
+                    // 执行复制命令
+                    document.execCommand("copy");
+                    // 将 input 元素移除
+                    document.body.removeChild(aux);
+                },
+                footerClick(footerItem, index) {
+                    this.footerData.active = index
+
+                    if (footerItem.link) {
+                        localStorage.setItem('footerIndex', index)
+                        window.open(this.footerData.baseUrl + footerItem.link, "_self")
+                    } else if (index === 1) {
+                        this.dialogData.show = true
+                    }
+
+                    // console.log(footerItem);
+                },
+                initSwiper1() {
+                    let swiper1 = new Swiper(".mySwiper1", {
+                        autoplay: {
+                            delay: 3000,//1秒切换一次
+                            disableOnInteraction: false
+                        },
+                        // loop: true,
+                        slidesPerView: 2.5,
+                        centeredSlides: false, //设置slide居中
+
+                        autoplayDisableOnInteraction: false,
+                        preventLinksPropagation: false,
+                        lazyLoading: true,
+                        observer: true, //修改swiper自己或子元素时，自动初始化swiper
+                        observeParents: true, //修改swiper的父元素时，自动初始化swiper
+                        // observer: true,//修改swiper自己或子元素时，自动初始化swiper
+                        // observeParents: true,//修改swiper的父元素时，自动初始化swiper
+                    });
+                },
+                onCancel() {
+                },
+                onSearch() {
+                    console.log(this.searchKey);
+                },
+            }
+        })
+    }
+</script>
+</body>
+
+</html>
