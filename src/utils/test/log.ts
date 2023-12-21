@@ -180,6 +180,10 @@ class Log extends console {
   readyData() {
     return 1;
   }
+
+  readyData2() {
+    return 1;
+  }
   readyDataInit() {
     return this.readyData();
   }
