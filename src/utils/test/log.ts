@@ -190,5 +190,8 @@ class Log extends console {
   readyDataInit() {
     return this.readyData();
   }
+  readyDataInit1() {
+    return this.readyData();
+  }
 
 }
