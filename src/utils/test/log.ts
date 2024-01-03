@@ -199,6 +199,9 @@ class Log extends console {
   readyData11() {
     return 1;
   }
+  readyData12() {
+    return 1;
+  }
   readyData7() {
     return 1;
   }
