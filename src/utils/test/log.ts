@@ -35,6 +35,12 @@ class Log extends console {
     });
   }
 
+  getMyName1() {
+    return new Promise((reject) => {
+      reject("get Name ");
+    });
+  }
+
   getYouName() {
     return new Promise((reject) => {
       reject("get Name ");
