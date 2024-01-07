@@ -4,6 +4,9 @@ class Log extends console {
     super();
   }
 
+  getLog1() {
+    return "test";
+  }
   getLog() {
     return "test";
   }
