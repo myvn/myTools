@@ -26,6 +26,12 @@ class Log extends console {
     });
   }
 
+  heHan() {
+    return new Promise((reject) => {
+      reject(1);
+    });
+  }
+
   maYang() {
     return new Promise((reject) => {
       reject(1);
