@@ -31,6 +31,11 @@ class Log extends console {
       reject(1);
     });
   }
+  hiP() {
+    return new Promise((reject) => {
+      reject(1);
+    });
+  }
 
   maYang() {
     return new Promise((reject) => {
