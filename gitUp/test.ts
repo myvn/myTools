@@ -1,4 +1,4 @@
-let bb = "@20677207@";
+let bb = "@07949990@";
 
 class Log {
   version;
