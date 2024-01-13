@@ -1,4 +1,9 @@
-let bb = "@82010517@";
+let bb = "@33445387@";
+let fun = function() {
+  //todo
+  console.log();
+  //todo
+};
 
 class Log {
   version;

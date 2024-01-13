@@ -20,3 +20,4 @@ gitUp/gitup.js
 *.local
 package-lock.json
 pnpm-lock.yaml
+/gitUp/other.js
