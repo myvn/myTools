@@ -1,9 +1,25 @@
 let bb = "@24017357@";
-let fun = function() {
+//todo
+    let slice = () => {
+    /**
+     * 字符串常用方法之 slice
+     * 作用：截取字符串
+     * 语法：字符串.slice(起始索引，结束索引)
+     * ○包含开始的索引对应的内容，不包含结束索引对应的内容
+     * ○结束索引不写就直接截取到末尾
+     * 返回值：截取出来的字符串
+     */
+    var str = "hello world";
+
+    // 使用 slice 截取字符串
+    var res = str.slice(1, 4); //ell
+    console.log(res);
+    //没有结束的索引直接截取到末尾
+    var res1 = str.slice(1); //ello world
+    console.log(res1);
+
+  }
   //todo
-  console.log();
-  //todo
-};
 
 class Log {
   version;
