@@ -1,17 +1,20 @@
 let bb = "@24017357@";
 //todo
-    let substring = () => {
+    let replace = () => {
     /**
-     * 字符串常用方法之 substring
-     * 作用：substring 是用来截取字符串使用的
-     * 语法： substring(从哪个索引开始，到哪个索引截止)，包含开始索引，不包含结束索引
-     * 返回值：返回截取到的内容
+     * 字符串常用方法之 replace
+     * 作用：用指定的内容替换掉字符串中的内容
+     * 语法：字符串.repalce(被替换的内容，要替换的内容)
+     * ○被替换内容 => 换下内容
+     * ○要替换内容 => 换上内容
+     * 返回值：替换好的字符串
+     * 注意：内容只能被替换一次，从索引0 的位置开始
      */
     var str = "hello world";
-
-    // 使用 substring截取字符串中的某一个内容
-    var res = str.substring(2, 8);
-    console.log(res); //llo wo
+// 使用 replace 替换字符串中的内容
+    var res = str.replace("l", "M");
+    console.log(res); // heMlo world
+    console.log(str); // hello world
   }
   //todo
 
