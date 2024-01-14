@@ -1,17 +1,16 @@
 let bb = "@24017357@";
 //todo
-    let substr = () => {
+    let charCodeAt = () => {
     /**
-     * 字符串常用方法之 substr
-     * 作用：substring 是用来截取字符串使用的
-     * 语法： substring(从哪个索引开始，到哪个索引截止)，包含开始索引，不包含结束索引
-     * 返回值：返回截取到的内容
+     * 字符串常用方法之 charCodeAt
+     * 作用：charCodeAt() 就是返回对应索引位置的 unicode 编码
+     * 语法：字符串.charCodeAt(索引)
+     * 返回值：该索引位置的对应字符的 编码(十进制)
      */
-    var str = "hello world";
-
-// 使用 substr截取字符串中的某一个内容
-    var res = str.substr(2, 7);//从索引2开始，截取7个
-    console.log(res); //llo wor
+    let str = "hello world";
+    // 使用 charAt 找到字符串中的某一个内容
+    let index = str.charCodeAt(4);
+    console.log(index); // 111
   }
   //todo
 
