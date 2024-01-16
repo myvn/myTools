@@ -1,23 +1,26 @@
 let bb = "@24017357@";
 //todo
-    let slice = () => {
+    let split = () => {
     /**
-     * 字符串常用方法之 slice
-     * 作用：截取字符串
-     * 语法：字符串.slice(起始索引，结束索引)
-     * ○包含开始的索引对应的内容，不包含结束索引对应的内容
-     * ○结束索引不写就直接截取到末尾
-     * 返回值：截取出来的字符串
+     * 字符串常用方法之 split
+     * 作用：按照切割符号, 把字符串切割开, 放在一个数组里面.
+     * 语法：字符串.split('指定的切割符')
+     * ○切割符可以不传递，就会和整体当做一个字符串
+     * ○(''）空字符串会一位一位的切割
+     * ○(' ') 字符串中有空格 会按照原字符串中的空格切割
+     * 返回值：一个用指定切割符切割好的数组
      */
     var str = "hello world";
 
-    // 使用 slice 截取字符串
-    var res = str.slice(1, 4); //ell
-    console.log(res);
-    //没有结束的索引直接截取到末尾
-    var res1 = str.slice(1); //ello world
-    console.log(res1);
+// 使用 split 切割成一个数组
+    var res = str.split();
+    console.log(res); //['hello world']
 
+    var res1 = str.split("");
+    console.log(res1); //['h', 'e', 'l', 'l', 'o', ' ', 'w', 'o', 'r', 'l', 'd']
+
+    var res2 = str.split(" ");
+    console.log(res2); //['hello', 'world']
   }
   //todo
 
