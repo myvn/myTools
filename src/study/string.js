@@ -55,6 +55,7 @@ module.exports = {
     var str = "hello world";
 
 // 使用 split 切割成一个数组
+    // @ts-ignore
     var res = str.split();
     console.log(res); //['hello world']
 
