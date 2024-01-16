@@ -1,20 +1,23 @@
 let bb = "@24017357@";
 //todo
-    let replace = () => {
+    let slice = () => {
     /**
-     * 字符串常用方法之 replace
-     * 作用：用指定的内容替换掉字符串中的内容
-     * 语法：字符串.repalce(被替换的内容，要替换的内容)
-     * ○被替换内容 => 换下内容
-     * ○要替换内容 => 换上内容
-     * 返回值：替换好的字符串
-     * 注意：内容只能被替换一次，从索引0 的位置开始
+     * 字符串常用方法之 slice
+     * 作用：截取字符串
+     * 语法：字符串.slice(起始索引，结束索引)
+     * ○包含开始的索引对应的内容，不包含结束索引对应的内容
+     * ○结束索引不写就直接截取到末尾
+     * 返回值：截取出来的字符串
      */
     var str = "hello world";
-// 使用 replace 替换字符串中的内容
-    var res = str.replace("l", "M");
-    console.log(res); // heMlo world
-    console.log(str); // hello world
+
+    // 使用 slice 截取字符串
+    var res = str.slice(1, 4); //ell
+    console.log(res);
+    //没有结束的索引直接截取到末尾
+    var res1 = str.slice(1); //ello world
+    console.log(res1);
+
   }
   //todo
 
