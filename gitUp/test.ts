@@ -1,20 +1,16 @@
 let bb = "@24017357@";
 //todo
-    let replace = () => {
+    let charCodeAt = () => {
     /**
-     * 字符串常用方法之 replace
-     * 作用：用指定的内容替换掉字符串中的内容
-     * 语法：字符串.repalce(被替换的内容，要替换的内容)
-     * ○被替换内容 => 换下内容
-     * ○要替换内容 => 换上内容
-     * 返回值：替换好的字符串
-     * 注意：内容只能被替换一次，从索引0 的位置开始
+     * 字符串常用方法之 charCodeAt
+     * 作用：charCodeAt() 就是返回对应索引位置的 unicode 编码
+     * 语法：字符串.charCodeAt(索引)
+     * 返回值：该索引位置的对应字符的 编码(十进制)
      */
-    var str = "hello world";
-// 使用 replace 替换字符串中的内容
-    var res = str.replace("l", "M");
-    console.log(res); // heMlo world
-    console.log(str); // hello world
+    let str = "hello world";
+    // 使用 charAt 找到字符串中的某一个内容
+    let index = str.charCodeAt(4);
+    console.log(index); // 111
   }
   //todo
 
