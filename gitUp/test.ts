@@ -1,19 +1,16 @@
 let bb = "@24017357a1@";
 //todo
-    let trim = () => {
+    let charCodeAt = () => {
     /**
-     * 字符串常用方法之 trim
-     *     作用：取出字符串头尾的空白内容
-     *     语法：字符串.trim()
-     *     返回值：去除空白内容以后的字符串
+     * 字符串常用方法之 charCodeAt
+     * 作用：charCodeAt() 就是返回对应索引位置的 unicode 编码
+     * 语法：字符串.charCodeAt(索引)
+     * 返回值：该索引位置的对应字符的 编码(十进制)
      */
-
-
-    var str = "   hello world     ";
-
-// 使用 trim 切割成一个数组
-    var res = str.trim();
-    console.log(res); // hello world
+    let str = "hello world";
+    // 使用 charAt 找到字符串中的某一个内容
+    let index = str.charCodeAt(4);
+    console.log(index); // 111
   }
   //todo
 
