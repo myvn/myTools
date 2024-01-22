@@ -1,17 +1,25 @@
 let bb = "@24017357a1@";
 //todo
-    let substring = () => {
+    let indexOf = () => {
     /**
-     * 字符串常用方法之 substring
-     * 作用：substring 是用来截取字符串使用的
-     * 语法： substring(从哪个索引开始，到哪个索引截止)，包含开始索引，不包含结束索引
-     * 返回值：返回截取到的内容
+     * 字符串常用方法之 indexOf
+     * 作用：indexOf 就是按照字符找到对应的索引
+     * 语法：字符串.indexOf(要查找的字符，开始索引)
+     * 返回值：
+     * ○如果有该字符内容, 那么就是该字符的索引位置
+     * ○如果没有该字符内容, 就是 -1
      */
-    var str = "hello world";
+    let str = "hello world";
 
-    // 使用 substring截取字符串中的某一个内容
-    var res = str.substring(2, 8);
-    console.log(res); //llo wo
+    // 使用 indexOf 找到字符串中的某一个内容
+    let index = str.indexOf("l", 0);
+    console.log(index); // 2 返回第一个找到的内容的下标后面的就不查找了
+
+    let index1 = str.indexOf("w", 3);
+    console.log(index1); // 6 不管从那个索引开始，索引的位置不变
+
+    let index2 = str.indexOf("w", 7);
+    console.log(index2); // -1 从索引7开始查找没有找到返回-1
   }
   //todo
 
