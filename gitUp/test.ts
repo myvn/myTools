@@ -1,17 +1,27 @@
 let bb = "@24017357a1@";
 //todo
-    let substring = () => {
+    let split = () => {
     /**
-     * 字符串常用方法之 substring
-     * 作用：substring 是用来截取字符串使用的
-     * 语法： substring(从哪个索引开始，到哪个索引截止)，包含开始索引，不包含结束索引
-     * 返回值：返回截取到的内容
+     * 字符串常用方法之 split
+     * 作用：按照切割符号, 把字符串切割开, 放在一个数组里面.
+     * 语法：字符串.split('指定的切割符')
+     * ○切割符可以不传递，就会和整体当做一个字符串
+     * ○(''）空字符串会一位一位的切割
+     * ○(' ') 字符串中有空格 会按照原字符串中的空格切割
+     * 返回值：一个用指定切割符切割好的数组
      */
     var str = "hello world";
 
-    // 使用 substring截取字符串中的某一个内容
-    var res = str.substring(2, 8);
-    console.log(res); //llo wo
+// 使用 split 切割成一个数组
+    // @ts-ignore
+    var res = str.split();
+    console.log(res); //['hello world']
+
+    var res1 = str.split("");
+    console.log(res1); //['h', 'e', 'l', 'l', 'o', ' ', 'w', 'o', 'r', 'l', 'd']
+
+    var res2 = str.split(" ");
+    console.log(res2); //['hello', 'world']
   }
   //todo
 
