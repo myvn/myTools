@@ -1,9 +1,9 @@
 let bb = "@24017357a1@";
 //todo
-    let indexOf = () => {
+    let lastIndexOf = () => {
     /**
-     * 字符串常用方法之 indexOf
-     * 作用：indexOf 就是按照字符找到对应的索引
+     * 字符串常用方法之 lastIndexOf
+     * 作用：lastIndexOf 是从后向前检测该字符在字符串内的索引位置
      * 语法：字符串.indexOf(要查找的字符，开始索引)
      * 返回值：
      * ○如果有该字符内容, 那么就是该字符的索引位置
@@ -11,15 +11,15 @@ let bb = "@24017357a1@";
      */
     let str = "hello world";
 
-    // 使用 indexOf 找到字符串中的某一个内容
-    let index = str.indexOf("l", 0);
-    console.log(index); // 2 返回第一个找到的内容的下标后面的就不查找了
+    // 使用 lastIndexOf 找到字符串中的某一个内容
+    let index = str.lastIndexOf("l");
+    console.log(index); //9 返回第一个找到的内容的下标后面的就不查找了,索引的位置不变
 
-    let index1 = str.indexOf("w", 3);
-    console.log(index1); // 6 不管从那个索引开始，索引的位置不变
+    let index1 = str.lastIndexOf("l", 8);
+    console.log(index1); //3 返回第一个找到的内容的下标后面的就不查找了，索引的位置不变
 
-    let index2 = str.indexOf("w", 7);
-    console.log(index2); // -1 从索引7开始查找没有找到返回-1
+    let index2 = str.lastIndexOf("w", 5);
+    console.log(index2); //-1 从后开始查找，开始的索引是5 但是前面没有找到w 返回-1
   }
   //todo
 
