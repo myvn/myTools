@@ -1,20 +1,20 @@
 let bb = "@24017357a1@";
 //todo
-    let replace = () => {
+    let toLowerCase = () => {
     /**
-     * 字符串常用方法之 replace
-     * 作用：用指定的内容替换掉字符串中的内容
-     * 语法：字符串.repalce(被替换的内容，要替换的内容)
-     * ○被替换内容 => 换下内容
-     * ○要替换内容 => 换上内容
-     * 返回值：替换好的字符串
-     * 注意：内容只能被替换一次，从索引0 的位置开始
+     * 字符串常用方法之 toLowerCase 和 toUpperCase
+     * 作用：这两个方法分别是用来给字母格式的字符串转成 小写字母 和 大写字母 的
+     * 语法：
+     * ○字符串.toLowerCase()
+     * ○字符串.toUpperCase()
      */
     var str = "hello world";
-// 使用 replace 替换字符串中的内容
-    var res = str.replace("l", "M");
-    console.log(res); // heMlo world
-    console.log(str); // hello world
+
+
+    // 使用 toLowerCase 转换成小写
+    var lower = str.toLowerCase();
+    console.log(lower); // hello world
+
   }
   //todo
 
