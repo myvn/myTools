@@ -1,19 +1,25 @@
 let bb = "@24017357a1@";
 //todo
-    let toUpperCase = () => {
+    let indexOf = () => {
     /**
-     * 字符串常用方法之 toLowerCase 和 toUpperCase
-     * 作用：这两个方法分别是用来给字母格式的字符串转成 小写字母 和 大写字母 的
-     * 语法：
-     * ○字符串.toLowerCase()
-     * ○字符串.toUpperCase()
+     * 字符串常用方法之 indexOf
+     * 作用：indexOf 就是按照字符找到对应的索引
+     * 语法：字符串.indexOf(要查找的字符，开始索引)
+     * 返回值：
+     * ○如果有该字符内容, 那么就是该字符的索引位置
+     * ○如果没有该字符内容, 就是 -1
      */
-    var str = "hello world";
+    let str = "hello world";
 
-    // 使用 toUpperCase 转换成大写
-    var upper = str.toUpperCase();
-    console.log(upper); // HELLO WORLD
+    // 使用 indexOf 找到字符串中的某一个内容
+    let index = str.indexOf("l", 0);
+    console.log(index); // 2 返回第一个找到的内容的下标后面的就不查找了
 
+    let index1 = str.indexOf("w", 3);
+    console.log(index1); // 6 不管从那个索引开始，索引的位置不变
+
+    let index2 = str.indexOf("w", 7);
+    console.log(index2); // -1 从索引7开始查找没有找到返回-1
   }
   //todo
 
