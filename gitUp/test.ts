@@ -1,23 +1,17 @@
 let bb = "@24017357a1@";
 //todo
-    let slice = () => {
+    let substr = () => {
     /**
-     * 字符串常用方法之 slice
-     * 作用：截取字符串
-     * 语法：字符串.slice(起始索引，结束索引)
-     * ○包含开始的索引对应的内容，不包含结束索引对应的内容
-     * ○结束索引不写就直接截取到末尾
-     * 返回值：截取出来的字符串
+     * 字符串常用方法之 substr
+     * 作用：substring 是用来截取字符串使用的
+     * 语法： substring(从哪个索引开始，到哪个索引截止)，包含开始索引，不包含结束索引
+     * 返回值：返回截取到的内容
      */
     var str = "hello world";
 
-    // 使用 slice 截取字符串
-    var res = str.slice(1, 4); //ell
-    console.log(res);
-    //没有结束的索引直接截取到末尾
-    var res1 = str.slice(1); //ello world
-    console.log(res1);
-
+// 使用 substr截取字符串中的某一个内容
+    var res = str.substr(2, 7);//从索引2开始，截取7个
+    console.log(res); //llo wor
   }
   //todo
 
