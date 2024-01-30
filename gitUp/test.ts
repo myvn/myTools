@@ -1,19 +1,25 @@
 let bb = "@24017357a1@";
 //todo
-    let trim = () => {
+    let indexOf = () => {
     /**
-     * 字符串常用方法之 trim
-     *     作用：取出字符串头尾的空白内容
-     *     语法：字符串.trim()
-     *     返回值：去除空白内容以后的字符串
+     * 字符串常用方法之 indexOf
+     * 作用：indexOf 就是按照字符找到对应的索引
+     * 语法：字符串.indexOf(要查找的字符，开始索引)
+     * 返回值：
+     * ○如果有该字符内容, 那么就是该字符的索引位置
+     * ○如果没有该字符内容, 就是 -1
      */
+    let str = "hello world";
 
+    // 使用 indexOf 找到字符串中的某一个内容
+    let index = str.indexOf("l", 0);
+    console.log(index); // 2 返回第一个找到的内容的下标后面的就不查找了
 
-    var str = "   hello world     ";
+    let index1 = str.indexOf("w", 3);
+    console.log(index1); // 6 不管从那个索引开始，索引的位置不变
 
-// 使用 trim 切割成一个数组
-    var res = str.trim();
-    console.log(res); // hello world
+    let index2 = str.indexOf("w", 7);
+    console.log(index2); // -1 从索引7开始查找没有找到返回-1
   }
   //todo
 
