@@ -1,21 +1,23 @@
 let bb = "@24017357a1@";
 //todo
-    let charAt = () => {
+    let concat = () => {
     /**
-     * 作用：charAt() 是找到字符串中指定索引位置的内容返回
-     * 语法：字符串.charAt(索引)
-     * 返回值：该索引位置对应的字符
-     * ○如果有该索引位置, 那么就是该索引位置的字符
-     * ○如果没有该索引位置, 那么就是 空字符串('')
+     * 字符串常用方法之 concat
+     * 作用：字符串拼接也可以说是字符串合并
+     * 语法：字符串.concat(字符串)
+     * 返回值：拼接后的字符串
      */
 
-    let str = "hello world";
-    // 使用 charAt 找到字符串中的某一个内容
-    let index = str.charAt(2);
-    console.log(index); // l
-    //查找索引为 13 的内容，因为没有返回是一共空字符串
-    let index1 = str.charAt(13);
-    console.log(index1); // ''
+    var str = "hello world ";
+
+    var str1 = "ni hao";
+
+    // 使用 concat 切割成一个数组
+    var res = str.concat("ni hao");
+    console.log(res); // hello world ni hao
+
+    var res1 = str.concat(str1);
+    console.log(res1); // hello world ni hao
   }
   //todo
 
