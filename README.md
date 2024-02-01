@@ -1,110 +1,93 @@
-# umd
+# my-tools-ts
 
-```html
+## install
 
-<script src="./dist/main.js"></script>
-<script>
-    // tools  window中有
-    let {setGrayscale, StorageData, JsSm4Client, randomAny} = tools
-</script>
-```
-
-# node安装
-
+```shell
 npm install my-tools-ts
-
-```javascript
-// 默认导出工具 小写开头不用实例化
-export {
-    // dom 置灰
-    setGrayscale,
-
-    // 数据存储工具类
-    StorageData,
-
-    // 国密4 加密
-    JsSm4Client,
-
-    // 随机字符串生成
-    randomAny
-}
 ```
 
-* ## setGrayscale 置灰
-
-> 通过dom对象设置style属性,来实现置灰
-
-
-
-配置参数描述
+## import
 
 ```javascript
-// num : 灰度0-100,默认为100 
-// domId :  domId 默认为app
+import { setGrayscale, StorageData, randomAny } from 'my-tools-ts'
 ```
-html
+## demo
+### setGrayscale 
+
+> Set the style property through the dom object to achieve automatic grey out of the background
+
+Configuration parameter description
+
+```javascript
+// num : Grey release [0,100],default : 100 
+// domId : String , default app
+setGrayscale(num,domId)
+```
+
+ 
+
 ```html
+
 <div id="app">
-    <div style="background: red;width: 20vw;height: 20vw">
-        测试自动置灰
-    </div>
+  <div style="background: red;width: 20vw;height: 20vw">
+    test
+  </div>
 </div>
 <script>
-    setGrayscale(100)
+  setGrayscale(100)
 </script>
 ```
-js
+
 ```javascript
 //
 // num : 灰度0-100,默认为100 
 // domId :  domId 默认为app
 
 // 引入
-import {setGrayscale} from 'my-tools-ts'
+import { setGrayscale } from 'my-tools-ts'
 //  给id为:testView 的dom对象,灰度设置为80%
-setGrayscale(80,'testView')
+setGrayscale(80, 'testView')
 ```
 
+## StorageData 
+Browser Local Data Encryption Storage Tool
 
-* ## StorageData : 浏览器本地数据加密存储工具
+> In the browser local data encryption storage (encryption using JsSm4), encryption can be controlled
 
-> 在浏览器本地数据加密存储(加密采用JsSm4),加密可控制.
-
-实例
 
 ```javascript
-// 引入
-import {StorageData} from 'my-tools-ts'
-// 配置参数 说明
+// import
+import { StorageData } from 'my-tools-ts'
+// Configuration parameters, description
 let option = {
-    // 必传 加密Key
-    publicKey: 'AnyString',
-    // 非必传 默认dev 控制数据加密 : dev:不加密 ||  other 加密
-    envName: 'pro',
-    // 非必传 默认 localStorage
-    // s 表示使用 sesionStorage 对象存储,
-    // l 表示使用 localStorage 对象存储,
-    storageObj: 'l',
-    // 非必传 默认 AnyString
-    privateKey: 'AnyString',
+  // Required, Encryption Key
+  publicKey: 'AnyString',
+  // Not required, default dev controls data encryption: dev: not encrypted | | other encryption
+  envName: 'pro',
+  // Not required, default localStorage
+  // s : sesionStorage saveObj,
+  // l : localStorage saveObj,
+  storageObj: 'l',
+  // Not required default AnyString
+  privateKey: 'AnyString',
 }
 
 let option = {
-    publicKey: 'AnyString',
-    envName: 'dev',
-    // s 表示使用 sesionStorage 对象存储,
-    // l 表示使用 localStorage 对象存储,
-    storageObj: 'l',
-    privateKey: 'AnyString',
+  publicKey: 'AnyString',
+  envName: 'dev',
+  // s : sesionStorage saveObj,
+  // l : localStorage saveObj,
+  storageObj: 'l',
+  privateKey: 'AnyString',
 }
 
 let storage = new StorageData(option)
 
 storage.setData('testString', 'ssssdfdsfs 12343234')
-storage.setData('testObject', {name:1})
+storage.setData('testObject', { name: 1 })
 storage.setData('testNumber', 111111)
 storage.setData('testBoolean', false)
-storage.setData('testArray', ["1",2,false,{name:1}])
+storage.setData('testArray', ["1", 2, false, { name: 1 }])
 
 console.log(storage.getData('testString'))
 console.log(storage.getData('testObject'))
@@ -113,19 +96,20 @@ console.log(storage.getData('testBoolean'))
 console.log(storage.getData('testArray'))
 ```
 
-* ## randomAny 随机字符串
+### randomAny  
+random string
 
-> 根据配置随机生成字符,最终以字符串形式返回
+> Generate random characters according to the configuration, and finally return them as strings
 
-* 数字: 1234567890
-* 字母: a_zA_Z
-* 英文符号: <~!@#$%^*()_+-=[]{}|;:,./?>
+* number: 1234567890
+* character: a_zA_Z
+* symbols: <~!@#$%^*()_+-=[]{}|;:,./?>
 
-配置参数描述
+Configuration parameter description
 
 ```javascript
 
-// length:随机字符串长度  非必传 默认4
+// length:Random string length, optional, default 4
 
 // * options :  string || {num:true,az:true,fh:true}
 
@@ -133,49 +117,49 @@ console.log(storage.getData('testArray'))
 
 ```javascript
 
-// 引入
-import {randomAny} from 'my-tools-ts'
-//  {num : 控制数字  az  : 控制字母,fh  : 控制符号}
+// import
+import { randomAny } from 'my-tools-ts'
+//  {num : number  az  : character, fh  : symbols}
 
-// 随机5位任意字符
+// Random 5-digit arbitrary character
 randomAny(5) // *Ql?/
-randomAny(5, {num: true, az: true, fh: true}) // -J-5o
+randomAny(5, { num: true, az: true, fh: true }) // -J-5o
 
-// 从'23rtgheer' 中随机8位
+// Random 8 bits from '23rtgheer'
 randomAny(8, '23rtgheer') // eegr23te
 
-// 随机8位数字
-randomAny(8, {num: true}) // ]}#-)/><
+// Random 8-digit number
+randomAny(8, { num: true }) // ]}#-)/><
 
-// 随机8位字母
-randomAny(8, {az: true}) // vUKIpxEb
+// Random 8-digit letter
+randomAny(8, { az: true }) // vUKIpxEb
 
-// 随机8位特殊字符
-randomAny(8, {fh: true}) // ]}#-)/><
+// Random 8-bit special characters
+randomAny(8, { fh: true }) // ]}#-)/><
 
 ```
 
-* ## JsSm4Client 国密4 加密,解密
+### JsSm4Client 
 
-> 封装了JsSm4,
+> Encapsulates JsSm4,
 
 
-配置参数描述
-key : 秘钥
+Configuration parameter description
+key : secret key
 
-* 加密方法
+* encryption method
 * @param plaintext
 * encryptData( plaintext:string): string
 
 
-* 解密方法
+* decryption method
 * @param ciphertext
 * decryptData(ciphertext:string): string
 
 ```javascript
-// 引入
+// import
 
-import {JsSm4Client} from 'my-tools-ts'
+import { JsSm4Client } from 'my-tools-ts'
 
 const key = '1234321'
 
