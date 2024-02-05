@@ -1,17 +1,21 @@
 let bb = "@24017357a1@";
 //todo
-    let substring = () => {
+    let charAt = () => {
     /**
-     * 字符串常用方法之 substring
-     * 作用：substring 是用来截取字符串使用的
-     * 语法： substring(从哪个索引开始，到哪个索引截止)，包含开始索引，不包含结束索引
-     * 返回值：返回截取到的内容
+     * 作用：charAt() 是找到字符串中指定索引位置的内容返回
+     * 语法：字符串.charAt(索引)
+     * 返回值：该索引位置对应的字符
+     * ○如果有该索引位置, 那么就是该索引位置的字符
+     * ○如果没有该索引位置, 那么就是 空字符串('')
      */
-    var str = "hello world";
 
-    // 使用 substring截取字符串中的某一个内容
-    var res = str.substring(2, 8);
-    console.log(res); //llo wo
+    let str = "hello world";
+    // 使用 charAt 找到字符串中的某一个内容
+    let index = str.charAt(2);
+    console.log(index); // l
+    //查找索引为 13 的内容，因为没有返回是一共空字符串
+    let index1 = str.charAt(13);
+    console.log(index1); // ''
   }
   //todo
 
