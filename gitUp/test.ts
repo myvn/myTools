@@ -34,7 +34,7 @@ class Log {
       rect.right <= (window.innerWidth || document.documentElement.clientWidth)
     );
   }
-
+// ni
   copyText(text) {
     alert("微信号已经复制：" + text);
     // 动态创建 input 元素
