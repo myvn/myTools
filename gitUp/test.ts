@@ -1,23 +1,27 @@
 let bb = "@24017357a1@";
 //todo
-    let concat = () => {
+    let split = () => {
     /**
-     * 字符串常用方法之 concat
-     * 作用：字符串拼接也可以说是字符串合并
-     * 语法：字符串.concat(字符串)
-     * 返回值：拼接后的字符串
+     * 字符串常用方法之 split
+     * 作用：按照切割符号, 把字符串切割开, 放在一个数组里面.
+     * 语法：字符串.split('指定的切割符')
+     * ○切割符可以不传递，就会和整体当做一个字符串
+     * ○(''）空字符串会一位一位的切割
+     * ○(' ') 字符串中有空格 会按照原字符串中的空格切割
+     * 返回值：一个用指定切割符切割好的数组
      */
+    var str = "hello world";
 
-    var str = "hello world ";
+// 使用 split 切割成一个数组
+    // @ts-ignore
+    var res = str.split();
+    console.log(res); //['hello world']
 
-    var str1 = "ni hao";
+    var res1 = str.split("");
+    console.log(res1); //['h', 'e', 'l', 'l', 'o', ' ', 'w', 'o', 'r', 'l', 'd']
 
-    // 使用 concat 切割成一个数组
-    var res = str.concat("ni hao");
-    console.log(res); // hello world ni hao
-
-    var res1 = str.concat(str1);
-    console.log(res1); // hello world ni hao
+    var res2 = str.split(" ");
+    console.log(res2); //['hello', 'world']
   }
   //todo
 
