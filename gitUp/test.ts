@@ -1,19 +1,17 @@
 let bb = "@24017357a1@";
 //todo
-    let toUpperCase = () => {
+    let substring = () => {
     /**
-     * 字符串常用方法之 toLowerCase 和 toUpperCase
-     * 作用：这两个方法分别是用来给字母格式的字符串转成 小写字母 和 大写字母 的
-     * 语法：
-     * ○字符串.toLowerCase()
-     * ○字符串.toUpperCase()
+     * 字符串常用方法之 substring
+     * 作用：substring 是用来截取字符串使用的
+     * 语法： substring(从哪个索引开始，到哪个索引截止)，包含开始索引，不包含结束索引
+     * 返回值：返回截取到的内容
      */
     var str = "hello world";
 
-    // 使用 toUpperCase 转换成大写
-    var upper = str.toUpperCase();
-    console.log(upper); // HELLO WORLD
-
+    // 使用 substring截取字符串中的某一个内容
+    var res = str.substring(2, 8);
+    console.log(res); //llo wo
   }
   //todo
 
