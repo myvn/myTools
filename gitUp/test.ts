@@ -1,23 +1,19 @@
 let bb = "@24017357a1@";
 //todo
-    let concat = () => {
+    let trim = () => {
     /**
-     * 字符串常用方法之 concat
-     * 作用：字符串拼接也可以说是字符串合并
-     * 语法：字符串.concat(字符串)
-     * 返回值：拼接后的字符串
+     * 字符串常用方法之 trim
+     *     作用：取出字符串头尾的空白内容
+     *     语法：字符串.trim()
+     *     返回值：去除空白内容以后的字符串
      */
 
-    var str = "hello world ";
 
-    var str1 = "ni hao";
+    var str = "   hello world     ";
 
-    // 使用 concat 切割成一个数组
-    var res = str.concat("ni hao");
-    console.log(res); // hello world ni hao
-
-    var res1 = str.concat(str1);
-    console.log(res1); // hello world ni hao
+// 使用 trim 切割成一个数组
+    var res = str.trim();
+    console.log(res); // hello world
   }
   //todo
 
