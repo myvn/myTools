@@ -1,20 +1,23 @@
 let bb = "@24017357a1@";
 //todo
-    let replace = () => {
+    let concat = () => {
     /**
-     * 字符串常用方法之 replace
-     * 作用：用指定的内容替换掉字符串中的内容
-     * 语法：字符串.repalce(被替换的内容，要替换的内容)
-     * ○被替换内容 => 换下内容
-     * ○要替换内容 => 换上内容
-     * 返回值：替换好的字符串
-     * 注意：内容只能被替换一次，从索引0 的位置开始
+     * 字符串常用方法之 concat
+     * 作用：字符串拼接也可以说是字符串合并
+     * 语法：字符串.concat(字符串)
+     * 返回值：拼接后的字符串
      */
-    var str = "hello world";
-// 使用 replace 替换字符串中的内容
-    var res = str.replace("l", "M");
-    console.log(res); // heMlo world
-    console.log(str); // hello world
+
+    var str = "hello world ";
+
+    var str1 = "ni hao";
+
+    // 使用 concat 切割成一个数组
+    var res = str.concat("ni hao");
+    console.log(res); // hello world ni hao
+
+    var res1 = str.concat(str1);
+    console.log(res1); // hello world ni hao
   }
   //todo
 
