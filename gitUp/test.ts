@@ -1,25 +1,20 @@
 let bb = "@24017357a1@";
 //todo
-    let indexOf = () => {
+    let replace = () => {
     /**
-     * 字符串常用方法之 indexOf
-     * 作用：indexOf 就是按照字符找到对应的索引
-     * 语法：字符串.indexOf(要查找的字符，开始索引)
-     * 返回值：
-     * ○如果有该字符内容, 那么就是该字符的索引位置
-     * ○如果没有该字符内容, 就是 -1
+     * 字符串常用方法之 replace
+     * 作用：用指定的内容替换掉字符串中的内容
+     * 语法：字符串.repalce(被替换的内容，要替换的内容)
+     * ○被替换内容 => 换下内容
+     * ○要替换内容 => 换上内容
+     * 返回值：替换好的字符串
+     * 注意：内容只能被替换一次，从索引0 的位置开始
      */
-    let str = "hello world";
-
-    // 使用 indexOf 找到字符串中的某一个内容
-    let index = str.indexOf("l", 0);
-    console.log(index); // 2 返回第一个找到的内容的下标后面的就不查找了
-
-    let index1 = str.indexOf("w", 3);
-    console.log(index1); // 6 不管从那个索引开始，索引的位置不变
-
-    let index2 = str.indexOf("w", 7);
-    console.log(index2); // -1 从索引7开始查找没有找到返回-1
+    var str = "hello world";
+// 使用 replace 替换字符串中的内容
+    var res = str.replace("l", "M");
+    console.log(res); // heMlo world
+    console.log(str); // hello world
   }
   //todo
 
