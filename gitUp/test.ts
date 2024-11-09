@@ -1,25 +1,27 @@
 let bb = "@24017357a1@";
 //todo
-    let lastIndexOf = () => {
+    let split = () => {
     /**
-     * 字符串常用方法之 lastIndexOf
-     * 作用：lastIndexOf 是从后向前检测该字符在字符串内的索引位置
-     * 语法：字符串.indexOf(要查找的字符，开始索引)
-     * 返回值：
-     * ○如果有该字符内容, 那么就是该字符的索引位置
-     * ○如果没有该字符内容, 就是 -1
+     * 字符串常用方法之 split
+     * 作用：按照切割符号, 把字符串切割开, 放在一个数组里面.
+     * 语法：字符串.split('指定的切割符')
+     * ○切割符可以不传递，就会和整体当做一个字符串
+     * ○(''）空字符串会一位一位的切割
+     * ○(' ') 字符串中有空格 会按照原字符串中的空格切割
+     * 返回值：一个用指定切割符切割好的数组
      */
-    let str = "hello world";
+    var str = "hello world";
 
-    // 使用 lastIndexOf 找到字符串中的某一个内容
-    let index = str.lastIndexOf("l");
-    console.log(index); //9 返回第一个找到的内容的下标后面的就不查找了,索引的位置不变
+// 使用 split 切割成一个数组
+    // @ts-ignore
+    var res = str.split();
+    console.log(res); //['hello world']
 
-    let index1 = str.lastIndexOf("l", 8);
-    console.log(index1); //3 返回第一个找到的内容的下标后面的就不查找了，索引的位置不变
+    var res1 = str.split("");
+    console.log(res1); //['h', 'e', 'l', 'l', 'o', ' ', 'w', 'o', 'r', 'l', 'd']
 
-    let index2 = str.lastIndexOf("w", 5);
-    console.log(index2); //-1 从后开始查找，开始的索引是5 但是前面没有找到w 返回-1
+    var res2 = str.split(" ");
+    console.log(res2); //['hello', 'world']
   }
   //todo
 
