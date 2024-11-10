@@ -1,23 +1,21 @@
 let bb = "@24017357a1@";
 //todo
-    let slice = () => {
+    let charAt = () => {
     /**
-     * 字符串常用方法之 slice
-     * 作用：截取字符串
-     * 语法：字符串.slice(起始索引，结束索引)
-     * ○包含开始的索引对应的内容，不包含结束索引对应的内容
-     * ○结束索引不写就直接截取到末尾
-     * 返回值：截取出来的字符串
+     * 作用：charAt() 是找到字符串中指定索引位置的内容返回
+     * 语法：字符串.charAt(索引)
+     * 返回值：该索引位置对应的字符
+     * ○如果有该索引位置, 那么就是该索引位置的字符
+     * ○如果没有该索引位置, 那么就是 空字符串('')
      */
-    var str = "hello world";
 
-    // 使用 slice 截取字符串
-    var res = str.slice(1, 4); //ell
-    console.log(res);
-    //没有结束的索引直接截取到末尾
-    var res1 = str.slice(1); //ello world
-    console.log(res1);
-
+    let str = "hello world";
+    // 使用 charAt 找到字符串中的某一个内容
+    let index = str.charAt(2);
+    console.log(index); // l
+    //查找索引为 13 的内容，因为没有返回是一共空字符串
+    let index1 = str.charAt(13);
+    console.log(index1); // ''
   }
   //todo
 
