@@ -1,19 +1,19 @@
 let bb = "@24017357a1@";
 //todo
-    let trim = () => {
+    let toUpperCase = () => {
     /**
-     * 字符串常用方法之 trim
-     *     作用：取出字符串头尾的空白内容
-     *     语法：字符串.trim()
-     *     返回值：去除空白内容以后的字符串
+     * 字符串常用方法之 toLowerCase 和 toUpperCase
+     * 作用：这两个方法分别是用来给字母格式的字符串转成 小写字母 和 大写字母 的
+     * 语法：
+     * ○字符串.toLowerCase()
+     * ○字符串.toUpperCase()
      */
+    var str = "hello world";
 
+    // 使用 toUpperCase 转换成大写
+    var upper = str.toUpperCase();
+    console.log(upper); // HELLO WORLD
 
-    var str = "   hello world     ";
-
-// 使用 trim 切割成一个数组
-    var res = str.trim();
-    console.log(res); // hello world
   }
   //todo
 
