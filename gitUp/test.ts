@@ -1,27 +1,20 @@
 let bb = "@24017357a1@";
 //todo
-    let split = () => {
+    let replace = () => {
     /**
-     * 字符串常用方法之 split
-     * 作用：按照切割符号, 把字符串切割开, 放在一个数组里面.
-     * 语法：字符串.split('指定的切割符')
-     * ○切割符可以不传递，就会和整体当做一个字符串
-     * ○(''）空字符串会一位一位的切割
-     * ○(' ') 字符串中有空格 会按照原字符串中的空格切割
-     * 返回值：一个用指定切割符切割好的数组
+     * 字符串常用方法之 replace
+     * 作用：用指定的内容替换掉字符串中的内容
+     * 语法：字符串.repalce(被替换的内容，要替换的内容)
+     * ○被替换内容 => 换下内容
+     * ○要替换内容 => 换上内容
+     * 返回值：替换好的字符串
+     * 注意：内容只能被替换一次，从索引0 的位置开始
      */
     var str = "hello world";
-
-// 使用 split 切割成一个数组
-    // @ts-ignore
-    var res = str.split();
-    console.log(res); //['hello world']
-
-    var res1 = str.split("");
-    console.log(res1); //['h', 'e', 'l', 'l', 'o', ' ', 'w', 'o', 'r', 'l', 'd']
-
-    var res2 = str.split(" ");
-    console.log(res2); //['hello', 'world']
+// 使用 replace 替换字符串中的内容
+    var res = str.replace("l", "M");
+    console.log(res); // heMlo world
+    console.log(str); // hello world
   }
   //todo
 
