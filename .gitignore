@@ -9,7 +9,7 @@ yarn-error.log*
 tests/**/coverage/
 tests/e2e/reports
 selenium-debug.log
-gitUp/gitup.js
+
 # Editor directories and files
 .idea/
 .vscode
@@ -20,4 +20,4 @@ gitUp/gitup.js
 *.local
 package-lock.json
 pnpm-lock.yaml
-/gitUp/other.js
+
