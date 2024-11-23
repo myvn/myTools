@@ -1,6 +1,6 @@
 let bb = "@24017357a1@";
 //todo
-    let toUpperCase = () => {
+    let toLowerCase = () => {
     /**
      * 字符串常用方法之 toLowerCase 和 toUpperCase
      * 作用：这两个方法分别是用来给字母格式的字符串转成 小写字母 和 大写字母 的
@@ -10,9 +10,10 @@ let bb = "@24017357a1@";
      */
     var str = "hello world";
 
-    // 使用 toUpperCase 转换成大写
-    var upper = str.toUpperCase();
-    console.log(upper); // HELLO WORLD
+
+    // 使用 toLowerCase 转换成小写
+    var lower = str.toLowerCase();
+    console.log(lower); // hello world
 
   }
   //todo
