@@ -36,6 +36,7 @@ function git_pull() {
   });
 
 }
+
 function git_add() {
   return new Promise((resolve, reject) => {
     exec("git add .", (error, stdout, stderr) => {
@@ -68,15 +69,21 @@ function git_commit() {
 
 function git_push() {
   return new Promise((resolve, reject) => {
-    exec(`git push`, (error, stdout, stderr) => {
-      if (error) {
-        console.error(`执行错误: ${error}`);
-        return resolve({ state: false, msg: error });
-      }
+    try {
+      exec(`git push`, (error, stdout, stderr) => {
+        if (error) {
+          console.error(`执行错误: ${error}`);
+          // throw error;
+          return resolve({ state: false, msg: error });
+        }
 
-      console.log("git_push ok");
-      return resolve({ state: true, msg: "git_push success" });
-    });
+        console.log("git_push ok");
+        return resolve({ state: true, msg: "git_push success" });
+      });
+    } catch (e) {
+      console.log(e);
+      return resolve({ state: false, msg: error });
+    }
   });
 }
 
@@ -123,11 +130,12 @@ function autoGitUp() {
 
 
     fileChange()
-      .then(res => {
+      /*.then(res => {
         if (res.state) {
           return git_pull();
         }
-      })
+      })*/
+
       .then(res => {
         if (res.state) {
           return git_add();
@@ -144,7 +152,7 @@ function autoGitUp() {
           // process.env.https_proxy = "http://127.0.0.1:7890";
           // process.env.http_proxy = "http://127.0.0.1:7890";
           // process.env.all_proxy = "socks5://127.0.0.1:7890";
-          console.log("process.env.https_proxy add",process.env.https_proxy);
+          console.log("process.env.https_proxy add", process.env.https_proxy);
           return git_push();
         }
       })
@@ -152,7 +160,7 @@ function autoGitUp() {
         // delete process.env.https_proxy;
         // delete process.env.http_proxy;
         // delete process.env.all_proxy;
-        console.log("process.env.https_proxy delete",process.env.https_proxy);
+        console.log("process.env.https_proxy delete", process.env.https_proxy);
 
         downCount++;
         console.log(downCount, dayjs().format("YYYY-MM-DD HH:mm:ss"));
