@@ -152,7 +152,7 @@ function autoGitUp() {
           // process.env.https_proxy = "http://127.0.0.1:7890";
           // process.env.http_proxy = "http://127.0.0.1:7890";
           // process.env.all_proxy = "socks5://127.0.0.1:7890";
-          console.log("process.env.https_proxy add", process.env.https_proxy);
+          // console.log("process.env.https_proxy add", process.env.https_proxy);
           return git_push();
         }
       })
