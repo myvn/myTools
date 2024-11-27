@@ -1,25 +1,21 @@
 let bb = "@24017357a1@";
 //todo
-    let indexOf = () => {
+    let charAt = () => {
     /**
-     * 字符串常用方法之 indexOf
-     * 作用：indexOf 就是按照字符找到对应的索引
-     * 语法：字符串.indexOf(要查找的字符，开始索引)
-     * 返回值：
-     * ○如果有该字符内容, 那么就是该字符的索引位置
-     * ○如果没有该字符内容, 就是 -1
+     * 作用：charAt() 是找到字符串中指定索引位置的内容返回
+     * 语法：字符串.charAt(索引)
+     * 返回值：该索引位置对应的字符
+     * ○如果有该索引位置, 那么就是该索引位置的字符
+     * ○如果没有该索引位置, 那么就是 空字符串('')
      */
+
     let str = "hello world";
-
-    // 使用 indexOf 找到字符串中的某一个内容
-    let index = str.indexOf("l", 0);
-    console.log(index); // 2 返回第一个找到的内容的下标后面的就不查找了
-
-    let index1 = str.indexOf("w", 3);
-    console.log(index1); // 6 不管从那个索引开始，索引的位置不变
-
-    let index2 = str.indexOf("w", 7);
-    console.log(index2); // -1 从索引7开始查找没有找到返回-1
+    // 使用 charAt 找到字符串中的某一个内容
+    let index = str.charAt(2);
+    console.log(index); // l
+    //查找索引为 13 的内容，因为没有返回是一共空字符串
+    let index1 = str.charAt(13);
+    console.log(index1); // ''
   }
   //todo
 
