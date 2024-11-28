@@ -82,7 +82,7 @@ function git_push() {
       });
     } catch (e) {
       console.log(e);
-      return resolve({ state: false, msg: error });
+      return resolve({ state: false, msg: "error" });
     }
   });
 }
