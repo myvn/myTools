@@ -1,17 +1,17 @@
 let bb = "@24017357a1@";
 //todo
-    let substr = () => {
+    let substring = () => {
     /**
-     * 字符串常用方法之 substr
+     * 字符串常用方法之 substring
      * 作用：substring 是用来截取字符串使用的
      * 语法： substring(从哪个索引开始，到哪个索引截止)，包含开始索引，不包含结束索引
      * 返回值：返回截取到的内容
      */
     var str = "hello world";
 
-// 使用 substr截取字符串中的某一个内容
-    var res = str.substr(2, 7);//从索引2开始，截取7个
-    console.log(res); //llo wor
+    // 使用 substring截取字符串中的某一个内容
+    var res = str.substring(2, 8);
+    console.log(res); //llo wo
   }
   //todo
 
