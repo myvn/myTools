@@ -1,22 +1,18 @@
 let bb = "@24017357a1@";
 //todo
-    let slice = () => {
+    let toUpperCase = () => {
     /**
-     * 字符串常用方法之 slice
-     * 作用：截取字符串
-     * 语法：字符串.slice(起始索引，结束索引)
-     * ○包含开始的索引对应的内容，不包含结束索引对应的内容
-     * ○结束索引不写就直接截取到末尾
-     * 返回值：截取出来的字符串
+     * 字符串常用方法之 toLowerCase 和 toUpperCase
+     * 作用：这两个方法分别是用来给字母格式的字符串转成 小写字母 和 大写字母 的
+     * 语法：
+     * ○字符串.toLowerCase()
+     * ○字符串.toUpperCase()
      */
     var str = "hello world";
 
-    // 使用 slice 截取字符串
-    var res = str.slice(1, 4); //ell
-    console.log(res);
-    //没有结束的索引直接截取到末尾
-    var res1 = str.slice(1); //ello world
-    console.log(res1);
+    // 使用 toUpperCase 转换成大写
+    var upper = str.toUpperCase();
+    console.log(upper); // HELLO WORLD
 
   }
   //todo
