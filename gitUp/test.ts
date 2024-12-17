@@ -1,16 +1,23 @@
 let bb = "@24017357a1@";
 //todo
-    let charCodeAt = () => {
+    let slice = () => {
     /**
-     * 字符串常用方法之 charCodeAt
-     * 作用：charCodeAt() 就是返回对应索引位置的 unicode 编码
-     * 语法：字符串.charCodeAt(索引)
-     * 返回值：该索引位置的对应字符的 编码(十进制)
+     * 字符串常用方法之 slice
+     * 作用：截取字符串
+     * 语法：字符串.slice(起始索引，结束索引)
+     * ○包含开始的索引对应的内容，不包含结束索引对应的内容
+     * ○结束索引不写就直接截取到末尾
+     * 返回值：截取出来的字符串
      */
-    let str = "hello world";
-    // 使用 charAt 找到字符串中的某一个内容
-    let index = str.charCodeAt(4);
-    console.log(index); // 111
+    var str = "hello world";
+
+    // 使用 slice 截取字符串
+    var res = str.slice(1, 4); //ell
+    console.log(res);
+    //没有结束的索引直接截取到末尾
+    var res1 = str.slice(1); //ello world
+    console.log(res1);
+
   }
   //todo
 
