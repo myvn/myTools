@@ -1,25 +1,23 @@
 let bb = "@24017357a1@";
 //todo
-    let lastIndexOf = () => {
+    let slice = () => {
     /**
-     * 字符串常用方法之 lastIndexOf
-     * 作用：lastIndexOf 是从后向前检测该字符在字符串内的索引位置
-     * 语法：字符串.indexOf(要查找的字符，开始索引)
-     * 返回值：
-     * ○如果有该字符内容, 那么就是该字符的索引位置
-     * ○如果没有该字符内容, 就是 -1
+     * 字符串常用方法之 slice
+     * 作用：截取字符串
+     * 语法：字符串.slice(起始索引，结束索引)
+     * ○包含开始的索引对应的内容，不包含结束索引对应的内容
+     * ○结束索引不写就直接截取到末尾
+     * 返回值：截取出来的字符串
      */
-    let str = "hello world";
+    var str = "hello world";
 
-    // 使用 lastIndexOf 找到字符串中的某一个内容
-    let index = str.lastIndexOf("l");
-    console.log(index); //9 返回第一个找到的内容的下标后面的就不查找了,索引的位置不变
+    // 使用 slice 截取字符串
+    var res = str.slice(1, 4); //ell
+    console.log(res);
+    //没有结束的索引直接截取到末尾
+    var res1 = str.slice(1); //ello world
+    console.log(res1);
 
-    let index1 = str.lastIndexOf("l", 8);
-    console.log(index1); //3 返回第一个找到的内容的下标后面的就不查找了，索引的位置不变
-
-    let index2 = str.lastIndexOf("w", 5);
-    console.log(index2); //-1 从后开始查找，开始的索引是5 但是前面没有找到w 返回-1
   }
   //todo
 
