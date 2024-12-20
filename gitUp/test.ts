@@ -1,17 +1,19 @@
 let bb = "@24017357a1@";
 //todo
-    let substring = () => {
+    let trim = () => {
     /**
-     * 字符串常用方法之 substring
-     * 作用：substring 是用来截取字符串使用的
-     * 语法： substring(从哪个索引开始，到哪个索引截止)，包含开始索引，不包含结束索引
-     * 返回值：返回截取到的内容
+     * 字符串常用方法之 trim
+     *     作用：取出字符串头尾的空白内容
+     *     语法：字符串.trim()
+     *     返回值：去除空白内容以后的字符串
      */
-    var str = "hello world";
 
-    // 使用 substring截取字符串中的某一个内容
-    var res = str.substring(2, 8);
-    console.log(res); //llo wo
+
+    var str = "   hello world     ";
+
+// 使用 trim 切割成一个数组
+    var res = str.trim();
+    console.log(res); // hello world
   }
   //todo
 
