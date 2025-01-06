@@ -1,20 +1,21 @@
 let bb = "@24017357a1@";
 //todo
-    let replace = () => {
+    let charAt = () => {
     /**
-     * 字符串常用方法之 replace
-     * 作用：用指定的内容替换掉字符串中的内容
-     * 语法：字符串.repalce(被替换的内容，要替换的内容)
-     * ○被替换内容 => 换下内容
-     * ○要替换内容 => 换上内容
-     * 返回值：替换好的字符串
-     * 注意：内容只能被替换一次，从索引0 的位置开始
+     * 作用：charAt() 是找到字符串中指定索引位置的内容返回
+     * 语法：字符串.charAt(索引)
+     * 返回值：该索引位置对应的字符
+     * ○如果有该索引位置, 那么就是该索引位置的字符
+     * ○如果没有该索引位置, 那么就是 空字符串('')
      */
-    var str = "hello world";
-// 使用 replace 替换字符串中的内容
-    var res = str.replace("l", "M");
-    console.log(res); // heMlo world
-    console.log(str); // hello world
+
+    let str = "hello world";
+    // 使用 charAt 找到字符串中的某一个内容
+    let index = str.charAt(2);
+    console.log(index); // l
+    //查找索引为 13 的内容，因为没有返回是一共空字符串
+    let index1 = str.charAt(13);
+    console.log(index1); // ''
   }
   //todo
 
