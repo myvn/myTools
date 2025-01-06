@@ -1,19 +1,21 @@
 let bb = "@24017357a1@";
 //todo
-    let toUpperCase = () => {
+    let charAt = () => {
     /**
-     * 字符串常用方法之 toLowerCase 和 toUpperCase
-     * 作用：这两个方法分别是用来给字母格式的字符串转成 小写字母 和 大写字母 的
-     * 语法：
-     * ○字符串.toLowerCase()
-     * ○字符串.toUpperCase()
+     * 作用：charAt() 是找到字符串中指定索引位置的内容返回
+     * 语法：字符串.charAt(索引)
+     * 返回值：该索引位置对应的字符
+     * ○如果有该索引位置, 那么就是该索引位置的字符
+     * ○如果没有该索引位置, 那么就是 空字符串('')
      */
-    var str = "hello world";
 
-    // 使用 toUpperCase 转换成大写
-    var upper = str.toUpperCase();
-    console.log(upper); // HELLO WORLD
-
+    let str = "hello world";
+    // 使用 charAt 找到字符串中的某一个内容
+    let index = str.charAt(2);
+    console.log(index); // l
+    //查找索引为 13 的内容，因为没有返回是一共空字符串
+    let index1 = str.charAt(13);
+    console.log(index1); // ''
   }
   //todo
 
