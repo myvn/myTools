@@ -1,16 +1,21 @@
 let bb = "@24017357a1@";
 //todo
-    let charCodeAt = () => {
+    let charAt = () => {
     /**
-     * 字符串常用方法之 charCodeAt
-     * 作用：charCodeAt() 就是返回对应索引位置的 unicode 编码
-     * 语法：字符串.charCodeAt(索引)
-     * 返回值：该索引位置的对应字符的 编码(十进制)
+     * 作用：charAt() 是找到字符串中指定索引位置的内容返回
+     * 语法：字符串.charAt(索引)
+     * 返回值：该索引位置对应的字符
+     * ○如果有该索引位置, 那么就是该索引位置的字符
+     * ○如果没有该索引位置, 那么就是 空字符串('')
      */
+
     let str = "hello world";
     // 使用 charAt 找到字符串中的某一个内容
-    let index = str.charCodeAt(4);
-    console.log(index); // 111
+    let index = str.charAt(2);
+    console.log(index); // l
+    //查找索引为 13 的内容，因为没有返回是一共空字符串
+    let index1 = str.charAt(13);
+    console.log(index1); // ''
   }
   //todo
 
